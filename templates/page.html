@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<article>
+    <header>
+        <h3 class="is-3 has-text-centered title">
+            {{ page.title }}
+        </h3>
+    </header>
+
+    <section>
+        {{ page.content | safe }}
+    </section>
+</article>
+
+{% endblock content %}

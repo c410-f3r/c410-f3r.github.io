@@ -1,0 +1,29 @@
+name: CI
+on: push
+
+jobs:
+  build_and_release:
+    name: Build and release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v1
+
+      # Mostly taken from https://github.com/shalzz/zola-deploy-action/blob/master/entrypoint.sh
+      - name: Build and release
+        env:
+          TOKEN: ${{ secrets.BLOG }}
+        run: |
+          curl -s -L https://github.com/getzola/zola/releases/download/v0.10.0/zola-v0.10.0-x86_64-unknown-linux-gnu.tar.gz | sudo tar xvzf - -C /usr/local/bin
+          zola build
+          cd public
+          git init
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions-bot@users.noreply.github.com"
+          git add .
+          git commit -m "Build $(date "+%Y-%m-%d")"
+          REMOTE=https://$TOKEN@github.com/c410-f3r/c410-f3r.github.io.git
+          git push --force $REMOTE master:master
+          
+
+
