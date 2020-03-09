@@ -1,0 +1,100 @@
+<!--
+    All icons belong to Font Awesome. Please, see https://fontawesome.com/license/free for 
+    more information.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <link href="{{ get_url(path="index.css", trailing_slash=false) }}" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ config.title }}</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="rounded-box">
+            <header>
+                <nav class="navbar" role="navigation" aria-label="main navigation">
+                    <div class="navbar-brand">
+                        <a class="is-family-secondary is-paddingless is-size-4 has-text-weight-bold navbar-item" href="/">Caio's Blog</a>
+
+                        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                            data-target="topMenu">
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                        </a>
+                    </div>
+
+                    <div class="navbar-menu" id="topMenu">
+                        <div class="navbar-end">
+                            {% for item in config.extra.navbar %}
+                            <a class="navbar-item" href="{{ item.url }}">
+                                <span class="icon">
+                                    <figure class="image is-16x16">
+                                        <img alt="{{ item.name }}" class="image is-16x16" src="{{ item.icon }}">
+                                    </figure>
+                                </span>
+                                <span>{{ item.name }}</span>
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <main>
+                {% block content %}
+                <h4 class="has-text-centered is-4 ribbon title">Recent posts</h4>
+
+                {% for page in paginator.pages %}
+                <article class="columns post-preview">
+                    <figure class="column is-3">
+                        <p class="image">
+                            <img alt="{{ page.title }}" src="{{ page.extra.image }}">
+                        </p>
+                    </figure>
+
+                    <div class="column">
+                        <div class="content">
+                            <p>
+                                <div><strong><a href="{{ page.permalink }}">{{ page.title }}</a></strong></div>
+                                {{ page.description | safe }}
+                            </p>
+                        </div>
+                    </div>
+                </article>
+                {% endfor %}
+                {% endblock content %}
+            </main>
+
+            <footer>
+                <div class="columns">
+                    <div class="column is-8">
+                        Made with <a alt="Bulma" href="https://bulma.io/" target="_blank"><strong>Bulma</strong></a>
+                        and
+                        <a alt="Zola" href="https://www.getzola.org" target="_blank"><strong>Zola</strong></a>.
+                    </div>
+                    <div class="column">
+                        <div>
+                            <a href="https://github.com/c410-f3r" target="_blank">
+                                <span class="icon is-small">
+                                    <img alt="Github" src="/fontawesome-free-5.5.0-web/github.svg">
+                                </span>
+                                <span>c410-f3r</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="{{ get_url(path="index.js", trailing_slash=false) }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h4 class="has-text-centered is-4 ribbon title">Archive</h4>
+
+{%set index_section = get_section(path=page.ancestors.0) %}
+
+{% for year, posts in index_section.pages | group_by(attribute="year") %}
+
+<ul>
+    {% for post in posts %}
+    <li><a href="{{ post.permalink }}"><strong>{{ posts | length - loop.index0 }} - {{ post.title }}</strong></a></li>
+    {% endfor %}
+</ul>
+{% endfor %}
+
+{% endblock content %}

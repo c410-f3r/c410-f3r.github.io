@@ -1,0 +1,89 @@
+@charset "utf-8";
+
+$desktop: 960px;
+$family-secondary: 'Comfortaa', cursive;
+$fullhd-enabled: false;
+$navbar-breakpoint: 769px;
+$navbar-item-hover-background-color: #fff;
+$primary: #485563;
+$secondary: #6D5447;
+$widescreen-enabled: false;
+
+$link: $primary;
+$navbar-item-hover-color: $secondary;
+
+@import "bulma-0.8.0/bulma.sass";
+
+// Classes
+
+.fl
+	float: left;
+	width: 40%;
+
+.is-family-secondary
+	font-family: $family-secondary;
+
+.post-preview + .post-preview
+    border-top: 1px solid rgba(219,219,219,0.5);
+    margin-top: 1rem;
+    padding-top: 1rem;
+
+.ribbon
+	+mobile
+		margin-left: -20px;
+	+tablet
+		margin-left: -40px;
+	background-color: #6D5447;
+	color: #fff;
+	margin-bottom: 50px !important;
+	padding: 7px 0;
+	position: relative;
+
+.ribbon:after
+	border-color: rgb(44, 34, 29) rgb(44, 34, 29) transparent transparent;
+	border-style: solid;
+	border-width: 5px 5px;
+	content: ' ';
+	height: 0;
+	left: 0px;
+	position: absolute;
+	top: 100%;
+	width: 0;
+
+.rounded-box
+	background-color: #fff;
+	box-shadow: 0px 0px 3px 0px #fff;
+	display: flex;
+	flex-direction: column;
+	min-height: calc(100vh - 10px);
+
+.title
+	font-family: $family-secondary;
+
+// Elements
+
+body
+	margin: 10px 10px 0px 10px;
+
+footer
+	margin-top: 60px;
+	margin-bottom: 20px;
+
+footer, header, main
+	+mobile
+		margin-left: 10px;
+		margin-right: 10px;
+	+tablet
+		margin-left: 30px;
+		margin-right: 30px;
+
+header, main
+	margin-top: 20px;
+	margin-bottom: 20px;
+
+html
+	// Credits: https://webgradients.com
+	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+
+main
+	flex: 1;
