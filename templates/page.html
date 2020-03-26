@@ -4,13 +4,14 @@
 
 <article>
     <header>
-        <h3 class="is-3 has-text-centered title">
+        <h3 class="is-3 title">
             {{ page.title }}
         </h3>
     </header>
-
     <section>
-        {{ page.content | safe }}
+        <div class="content">
+            {{ page.content | safe }}
+        </div>
     </section>
 </article>
 

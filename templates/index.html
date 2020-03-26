@@ -77,12 +77,8 @@
                     </figure>
 
                     <div class="column">
-                        <div class="content">
-                            <p>
-                                <div><strong><a href="{{ page.permalink }}">{{ page.title }}</a></strong></div>
-                                {{ page.description | safe }}
-                            </p>
-                        </div>
+                        <div><strong><a href="{{ page.permalink }}">{{ page.title }}</a></strong></div>
+                        {{ page.description | safe }}
                     </div>
                 </article>
                 {% endfor %}
