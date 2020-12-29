@@ -29,7 +29,6 @@ courses = [
     { href="https://linuxacademy.com/profile/u/cert/id/364013", name="Linux Networking and Troubleshooting, A Cloud Guru" },
     { href="https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/f41f24d9-de4b-5a50-9f45-c930ded8255b-caio-fernandes-linux-networking-and-administration-lfs211-certificate.pdf", name="Linux Networking and Administration, Linux Foundation" },
     { href="https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/f41f24d9-de4b-5a50-9f45-c930ded8255b-caio-fernandes-de-assis-essentials-of-linux-system-administration-lfs201-certificate.pdf", name="Essentials of Linux System Administration, Linux Foundation" },
-f41f24d9-de4b-5a50-9f45-c930ded8255b-caio-fernandes-de-assis-essentials-of-linux-system-administration-lfs201-certificate.pdf
     { href="https://udemy-certificate.s3.amazonaws.com/image/UC-8cbb9e52-cd0a-4d79-929c-569251cb09d9.jpg", name="Certified Blockchain Solutions Architect, Udemy" },
     { href="https://udemy-certificate.s3.amazonaws.com/image/UC-901d67f3-5682-45ab-bfcf-0bc27c59092a.jpg", name="Linux Foundation Certified Engineer (LFCE), Udemy" },
     { href="https://udemy-certificate.s3.amazonaws.com/image/UC-9a6e2101-1c29-4678-8e1f-4419a8c79f7f.jpg", name="Vim MasterClass, Udemy" },
