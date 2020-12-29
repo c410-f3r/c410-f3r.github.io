@@ -9,7 +9,7 @@
 
 <ul>
     {% for post in posts %}
-    <li><a href="{{ post.permalink }}"><strong>{{ posts | length - loop.index0 }} - {{ post.title }}</strong></a></li>
+    <li><a href="{{ post.permalink }}"><strong>{{ post.title }}</strong></a></li>
     {% endfor %}
 </ul>
 {% endfor %}

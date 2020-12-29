@@ -11,7 +11,7 @@ image = "/posts/sparse-multidimensional-structures-written-in-rust/intro.jpg"
 +++
 
 <figure class="image">
-  <img src="/posts/sparse-multidimensional-structures-written-in-rust/intro.jpg" alt="Introducion">
+  <img src="/posts/sparse-multidimensional-structures-written-in-rust/intro.jpg" alt="Introduction">
   <figcaption>Photo by Patrick Fore on Unsplash</figcaption>
 </figure>
 
@@ -140,7 +140,7 @@ If you are still confused or don't want to manually create instances, it is easi
   <figcaption>Photo by David Boca on Unsplash</figcaption>
 </figure>
 
-Have you ever heard of Rust? If not, you should probably start getting used to it. Currently, several companies are using it [[1]](https://www.rust-lang.org/production/users) and several programs are being written or rewritten in Rust like Firefox, ripgrep and librsvg. The reasons for such success are numerous: It is very fast, includes high-level facilities, the ownership rules prevent many memory management pitfalls (as well as thread safety), has an incredible community and many other greatnesses.
+Have you ever heard of Rust? If not, you should probably start getting used to it. Currently, several companies are using it [[1]](https://www.rust-lang.org/production/users) and several programs are being written or rewritten in Rust like Firefox, ripgrep and librsvg. The reasons for such success are numerous: It is very fast, includes high-level facilities, the ownership rules prevent many memory management pitfalls (as well as thread safety), has an incredible community and many other cool things.
 
 Unfortunately, for truly N-dimensional structures, the nightly constant generics feature is a hard requirement and even with it, there are no std implementations for arrays greater than 32 elements [[2]](https://github.com/rust-lang/rust/issues/61415) [[3]](https://github.com/rust-lang/rust/pull/62435), which leads to the creation of the [ArrayWrapper] alternative that is used heavily internally, thus, the `Into::into()` method conversion from `[T; N]` to `ArrayWrapper<T, N>`.
 
@@ -194,7 +194,7 @@ let are_equal = some_csl
 assert!(are_equal, true);
 ```
 
-COO is more straightfoward. For example, one can use `some_coo.data().par_iter().for_each(|_| {})`.
+COO is more straightforward. For example, one can use `some_coo.data().par_iter().for_each(|_| {})`.
 
 <h4 class="is-4 title">Future</h4>
 
