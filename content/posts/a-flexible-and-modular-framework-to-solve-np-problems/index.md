@@ -11,7 +11,7 @@ image = "/posts/a-flexible-and-modular-framework-to-solve-np-problems/intro.jpg"
 +++
 
 <figure class="image">
-  <img src="/posts/a-flexible-and-modular-framework-to-solve-np-problems/intro.jpg" alt="Introducion">
+  <img src="/posts/a-flexible-and-modular-framework-to-solve-np-problems/intro.jpg" alt="Introduction">
   <figcaption>Adapted photo of Oziel Gómez on Unsplash.</figcaption>
 </figure>
 
@@ -70,14 +70,14 @@ Although one of the principles of this project is to host several solvers, there
 All tests were performed in my workstation, a notebook with Intel i5 72000U and 8GB memory. The code is a gist hosted at [https://gist.github.com/c410-f3r/4285385cd780652d6bf068b2750da170].
 
 <figure class="image">
-  <img src="/posts/a-flexible-and-modular-framework-to-solve-np-problems/binh_and_korn.jpg" alt="Introducion">
+  <img src="/posts/a-flexible-and-modular-framework-to-solve-np-problems/binh_and_korn.jpg" alt="Benchmark">
   <figcaption>Image provided by <a href="https://github.com/38/plotters">plotters</a></figcaption>
 </figure>
 
 You can see the Pareto front where the objectives results were very similar to the ones found on Wikipedia. Two main things regarding the solver and its parameters are noteworthy: First, there are more solutions at the top than at the bottom of the graph indicating a possible elitism. Two, some off-the-line solutions are probably indicating an intentional algorithm diversification for a better search-sparse exploration and off-springs.
 
 <figure class="image">
-  <img src="/posts/a-flexible-and-modular-framework-to-solve-np-problems/time.png" alt="Introducion">
+  <img src="/posts/a-flexible-and-modular-framework-to-solve-np-problems/time.png" alt="Time">
   <figcaption>Parameters provided by <a href="https://github.com/sharkdp/hyperfine">hyperfine</a></figcaption>
 </figure>
 

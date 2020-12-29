@@ -3,17 +3,14 @@ build_search_index = false
 compile_sass = true
 default_language = "en"
 highlight_code = true
-taxonomies = [
-    {name = "tags"},
-]
 title = "Caio's Blog"
 
 [extra]
 navbar = [
-    {icon = "/fontawesome-free-5.5.0-web/home.svg", url = "/", name = "Home"},
-    {icon = "/fontawesome-free-5.5.0-web/question.svg", url = "/about", name = "About"},
-    {icon = "/fontawesome-free-5.5.0-web/archive.svg", url = "/archive", name = "Archive"},
-    {icon = "/fontawesome-free-5.5.0-web/list.svg", url = "/curriculum.pdf", name = "Curriculum"},
-    {icon = "/fontawesome-free-5.5.0-web/tags.svg", url = "/tags", name = "Tags"},
+    { icon = "/fontawesome/home.svg", url = "/", name = "Home" },
+    { icon = "/fontawesome/question.svg", url = "/about", name = "About" },
+    { icon = "/fontawesome/archive.svg", url = "/archive", name = "Archive" },
+    { icon = "/fontawesome/school.svg", url = "/courses", name = "Courses" },
+    { icon = "/fontawesome/list.svg", url = "/curriculum.pdf", name = "Curriculum" },
 ]
 
