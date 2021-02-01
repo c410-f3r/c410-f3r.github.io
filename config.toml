@@ -2,7 +2,6 @@ base_url = "https://c410-f3r.github.io/"
 build_search_index = false
 compile_sass = true
 default_language = "en"
-highlight_code = true
 title = "Caio's Blog"
 
 [extra]
@@ -14,3 +13,5 @@ navbar = [
     { icon = "/fontawesome/list.svg", url = "/curriculum.pdf", name = "Curriculum" },
 ]
 
+[markdown]
+highlight_code = true
