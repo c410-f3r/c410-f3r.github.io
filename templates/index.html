@@ -37,7 +37,7 @@
             <header>
                 <nav class="navbar" role="navigation" aria-label="main navigation">
                     <div class="navbar-brand">
-                        <a class="is-family-secondary is-paddingless is-size-4 has-text-weight-bold navbar-item" href="/">Caio's Blog</a>
+                        <a class="is-family-secondary is-paddingless is-size-4 has-text-weight-bold navbar-item" href="/" title = "Caio's blog">Caio's Blog</a>
 
                         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
                             data-target="topMenu">
@@ -50,7 +50,7 @@
                     <div class="navbar-menu" id="topMenu">
                         <div class="navbar-end">
                             {% for item in config.extra.navbar %}
-                            <a class="navbar-item" href="{{ item.url }}">
+                            <a class="navbar-item" href="{{ item.url }}" title="{{ item.name }}">
                                 <span class="icon">
                                     <figure class="image is-16x16">
                                         <img alt="{{ item.name }}" class="image is-16x16" src="{{ item.icon }}">
@@ -86,7 +86,7 @@
             </main>
 
             <footer>
-                <div class="columns">
+                <div class="columns is-vcentered">
                     <div class="column is-8">
                         Made with <a alt="Bulma" href="https://bulma.io/" target="_blank"><strong>Bulma</strong></a>
                         and
@@ -94,11 +94,13 @@
                     </div>
                     <div class="column">
                         <div>
-                            <a href="https://github.com/c410-f3r" target="_blank">
-                                <span class="icon is-small">
-                                    <img alt="Github" src="/fontawesome-free-5.5.0-web/github.svg">
+                            <a href="https://github.com/c410-f3r" target="_blank" title="GitHub account">
+                                <span class="icon-text">
+                                    <span class="icon">
+                                        <img alt="Github" src="/fontawesome/github.svg">
+                                    </span>
+                                    <span>c410-f3r</span>
                                 </span>
-                                <span>c410-f3r</span>
                             </a>
                         </div>
                     </div>
