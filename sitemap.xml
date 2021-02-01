@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://c410-f3r.github.io/</loc>
+    </url>
+    <url>
+        <loc>https://c410-f3r.github.io/about/</loc>
+    </url>
+    <url>
+        <loc>https://c410-f3r.github.io/archive/</loc>
+    </url>
+    <url>
+        <loc>https://c410-f3r.github.io/courses/</loc>
+    </url>
+    <url>
+        <loc>https://c410-f3r.github.io/menu/</loc>
+    </url>
+    <url>
+        <loc>https://c410-f3r.github.io/page/1/</loc>
+    </url>
+    <url>
+        <loc>https://c410-f3r.github.io/posts/</loc>
+    </url>
+    <url>
+        <loc>https://c410-f3r.github.io/posts/a-flexible-and-modular-framework-to-solve-np-problems/</loc>
+        <lastmod>2020-03-28</lastmod>
+    </url>
+    <url>
+        <loc>https://c410-f3r.github.io/posts/sparse-multidimensional-structures-written-in-rust/</loc>
+        <lastmod>2019-03-09</lastmod>
+    </url>
+</urlset>
