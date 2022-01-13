@@ -35,9 +35,9 @@
     <div class="container">
         <div class="rounded-box">
             <header>
-                <nav class="navbar" role="navigation" aria-label="main navigation">
+                <nav class="is-size-5 navbar" role="navigation" aria-label="main navigation">
                     <div class="navbar-brand">
-                        <a class="is-family-secondary is-paddingless is-size-4 has-text-weight-bold navbar-item" href="/" title = "Caio's blog">Caio's Blog</a>
+                        <a class="is-family-secondary is-paddingless is-size-4 has-text-weight-bold navbar-item" href="/" title = "Caio's Stuff">Caio's Stuff</a>
 
                         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
                             data-target="topMenu">
@@ -47,10 +47,10 @@
                         </a>
                     </div>
 
-                    <div class="navbar-menu" id="topMenu">
+                    <div class="has-text-weight-light navbar-menu" id="topMenu">
                         <div class="navbar-end">
                             {% for item in config.extra.navbar %}
-                            <a class="navbar-item" href="{{ item.url }}" title="{{ item.name }}">
+                            <a class="navbar-item px-4 underline" href="{{ item.url }}" title="{{ item.name }}">
                                 <span class="icon">
                                     <figure class="image is-16x16">
                                         <img alt="{{ item.name }}" class="image is-16x16" src="{{ item.icon }}">
