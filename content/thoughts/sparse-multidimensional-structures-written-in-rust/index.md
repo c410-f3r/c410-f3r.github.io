@@ -7,11 +7,11 @@ title = "Sparse multidimensional structures written in Rust"
 tags = ["sparse", "data-structure", "multidimensional", "rust"]
 
 [extra]
-image = "/posts/sparse-multidimensional-structures-written-in-rust/intro.jpg"
+image = "/thoughts/sparse-multidimensional-structures-written-in-rust/intro.jpg"
 +++
 
 <figure class="image">
-  <img src="/posts/sparse-multidimensional-structures-written-in-rust/intro.jpg" alt="Introduction">
+  <img src="/thoughts/sparse-multidimensional-structures-written-in-rust/intro.jpg" alt="Introduction">
   <figcaption>Photo by Patrick Fore on Unsplash</figcaption>
 </figure>
 
@@ -136,7 +136,7 @@ If you are still confused or don't want to manually create instances, it is easi
 <h4 class="is-4 title">Rust-ish features</h4>
 
 <figure class="image">
-  <img src="/posts/sparse-multidimensional-structures-written-in-rust/rust.jpg" alt="Rust">
+  <img src="/thoughts/sparse-multidimensional-structures-written-in-rust/rust.jpg" alt="Rust">
   <figcaption>Photo by David Boca on Unsplash</figcaption>
 </figure>
 
