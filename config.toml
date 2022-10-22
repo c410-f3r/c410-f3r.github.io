@@ -2,15 +2,19 @@ base_url = "https://c410-f3r.github.io/"
 build_search_index = false
 compile_sass = true
 default_language = "en"
+taxonomies = [
+    { name = "tags"}
+]
 title = "Caio's Stuff"
 
 [extra]
 navbar = [
+    { icon = "/fontawesome/lightbulb.svg", url = "/certifications", name = "Certifications" },
     { icon = "/fontawesome/school.svg", url = "/courses", name = "Courses" },
     { icon = "/fontawesome/envelope.svg", url = "/cover-letter", name = "Cover letter" },
     { icon = "/fontawesome/list.svg", url = "/curriculum.pdf", name = "Curriculum" },
-    { icon = "/fontawesome/lightbulb.svg", url = "/", name = "Thoughts" },
 ]
 
 [markdown]
 highlight_code = true
+
