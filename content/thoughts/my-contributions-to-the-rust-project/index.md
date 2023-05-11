@@ -1,17 +1,17 @@
 +++
 date = 2023-05-11
-description = "A quick recap of my contributions to the official Rust project over the span of several years."
+description = "A quick recap of my contributions to the official Rust compiler over the span of several years."
 title = "My contributions to the Rust project"
 
 [taxonomies]
 tags = ["rust", "compiler", "open-source"]
 
 [extra]
-image = "/thoughts/my-contributions-to-the-rust-compiler/intro.jpg"
+image = "/thoughts/my-contributions-to-the-rust-project/intro.jpg"
 +++
 
 <figure class="image">
-  <img src="/thoughts/my-contributions-to-the-rust-compiler/intro.jpg" alt="Introduction">
+  <img src="/thoughts/my-contributions-to-the-rust-project/intro.jpg" alt="Introduction">
   <figcaption>Photo by Roman Synkevych on Unsplash</figcaption>
 </figure>
 
