@@ -21,7 +21,7 @@ A flexible mathematical optimization program is nothing new, there are many bett
 
 <h4 class="is-4 subtitle">NP-Problems</h4>
 
-One of the reasons of why it is very hard to find feasible solutions for Non-deterministic Polynomial Problems are due to their large search spaces. Take for example the classic Traveling Salesman problem (TSP), the set *S* of all possible traveling combinations is *N*! with *N* being the number of cities. Now imagine an instance with 80 cities, then *S* will be equal to 7,156945705×10¹¹⁸ and no supercomputer in the world in be able to brute-force every combination of this set that is much greater than the number of atoms or the age of the universe.
+One of the reasons of why it is very hard to find feasible solutions for Non-deterministic Polynomial Problems are due to their large search spaces. Take for example the classic Traveling Salesman problem (TSP), the set *S* of all possible traveling combinations is *N*! with *N* being the number of cities. Now imagine an instance with 80 cities, then *S* will be equal to 7,156945705×10¹¹⁸ and no supercomputer in the world will be able to brute-force every combination of this set that is much greater than the number of atoms or the age of the universe.
 
 > Curiously, it is not mathematically proven if P≠NP or P=NP
 
