@@ -1,0 +1,220 @@
+<!--
+    All icons belong to Font Awesome. Please, see https://fontawesome.com/license/free for 
+    more information.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <link href="https://c410-f3r.github.io/index.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Caio&#x27;s Stuff</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="rounded-box">
+            <header>
+                <nav class="is-size-5 navbar" role="navigation" aria-label="main navigation">
+                    <div class="navbar-brand">
+                        <a class="is-family-secondary is-paddingless is-size-4 has-text-weight-bold navbar-item" href="/" title = "Caio's stuff">Caio's Stuff</a>
+
+                        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                            data-target="topMenu">
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                        </a>
+                    </div>
+
+                    <div class="has-text-weight-light navbar-menu" id="topMenu">
+                        <div class="navbar-end">
+                            
+                            <a class="navbar-item px-4 underline" href="&#x2F;certifications" title="Certifications">
+                                <span class="icon">
+                                    <figure class="image is-16x16">
+                                        <img alt="Certifications" class="image is-16x16" src="&#x2F;fontawesome&#x2F;lightbulb.svg">
+                                    </figure>
+                                </span>
+                                <span>Certifications</span>
+                            </a>
+                            
+                            <a class="navbar-item px-4 underline" href="&#x2F;courses" title="Courses">
+                                <span class="icon">
+                                    <figure class="image is-16x16">
+                                        <img alt="Courses" class="image is-16x16" src="&#x2F;fontawesome&#x2F;school.svg">
+                                    </figure>
+                                </span>
+                                <span>Courses</span>
+                            </a>
+                            
+                            <a class="navbar-item px-4 underline" href="&#x2F;cover-letter" title="Cover letter">
+                                <span class="icon">
+                                    <figure class="image is-16x16">
+                                        <img alt="Cover letter" class="image is-16x16" src="&#x2F;fontawesome&#x2F;envelope.svg">
+                                    </figure>
+                                </span>
+                                <span>Cover letter</span>
+                            </a>
+                            
+                            <a class="navbar-item px-4 underline" href="&#x2F;curriculum.pdf" title="Curriculum">
+                                <span class="icon">
+                                    <figure class="image is-16x16">
+                                        <img alt="Curriculum" class="image is-16x16" src="&#x2F;fontawesome&#x2F;list.svg">
+                                    </figure>
+                                </span>
+                                <span>Curriculum</span>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <main>
+                
+
+<article>
+    <header>
+        <h3 class="is-3 title">
+            My contributions to the Rust project
+        </h3>
+    </header>
+    <section>
+        <div class="content">
+            <figure class="image">
+  <img src="/thoughts/my-contributions-to-the-rust-project/intro.jpg" alt="Introduction">
+  <figcaption>Photo by Roman Synkevych on Unsplash</figcaption>
+</figure>
+<p>All started with <a href="https://github.com/rust-lang/rust/issues/60406#issuecomment-488306461">https://github.com/rust-lang/rust/issues/60406#issuecomment-488306461</a> around ~4 years ago and since then I didn't stop contributing to the Rust compiler as well as other related projects like Clippy in my free time.</p>
+<p>Besides the technical skills learned, the things that stood out the most were the concentration of knowledge in the hands of few busy individuals that eventually parted away and a noticeable amount of good contributors passing through sensible financial problems but these are matters for another post.</p>
+<p>Without further ado, let's list all my major contributions in chronological order.</p>
+<h4 class="is-4 subtitle">1. Attributes in formal function parameter position</h4>
+<p>More-or-less like a introduction to the internals of the project, <a href="https://github.com/rust-lang/rust/issues/60406">https://github.com/rust-lang/rust/issues/60406</a> wasn't very difficult to implement because all necessary pieces were already available for utilization.</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#65737e;">// Snippet extracted from the Juniper project
+</span><span>
+</span><span>#[</span><span style="color:#bf616a;">graphql_object</span><span>]
+</span><span style="color:#b48ead;">impl </span><span>Person {
+</span><span>  </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">field</span><span>(
+</span><span>    &amp;</span><span style="color:#bf616a;">self</span><span>,
+</span><span>    #[graphql(</span><span style="color:#bf616a;">default</span><span>)] </span><span style="color:#bf616a;">arg</span><span>: </span><span style="color:#b48ead;">i32
+</span><span>  ) -&gt; String {
+</span><span>    ...
+</span><span>  }
+</span><span>}
+</span></code></pre>
+<h4 class="is-4 subtitle">2. Easily create arrays with custom elements</h4>
+<p>Unfortunately <a href="https://github.com/rust-lang/rust/pull/75644">https://github.com/rust-lang/rust/pull/75644</a> took one year to be reviewed but at least one subset was stabilized on version 1.63.</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#65737e;">// Snippet extracted from the Arbitrary project
+</span><span>
+</span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">size_hint</span><span>(</span><span style="color:#bf616a;">d</span><span>: </span><span style="color:#b48ead;">usize</span><span>) -&gt; (</span><span style="color:#b48ead;">usize</span><span>, Option&lt;</span><span style="color:#b48ead;">usize</span><span>&gt;) {
+</span><span>  </span><span style="color:#b48ead;">crate</span><span>::size_hint::and_all(&amp;array::from_fn::&lt;_, N, _&gt;(|_| {
+</span><span>    &lt;T as Arbitrary&gt;::size_hint(d)
+</span><span>  }))
+</span><span>}
+</span></code></pre>
+<h4 class="is-4 subtitle">3. Formally implement let chains</h4>
+<p>The toughest contribution, no doubt about that. <a href="https://github.com/rust-lang/rust/pull/88642">https://github.com/rust-lang/rust/pull/88642</a> was very challenging both technically and mentally.</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#65737e;">// Snippet extracted from the Clippy project
+</span><span>
+</span><span style="color:#b48ead;">if let </span><span>FormatArgsPiece::Placeholder(placeholder) = piece
+</span><span>  &amp;&amp; </span><span style="color:#b48ead;">let </span><span>Ok(index) = placeholder.argument.index
+</span><span>  &amp;&amp; </span><span style="color:#b48ead;">let </span><span>Some(arg) = format_args.arguments.</span><span style="color:#96b5b4;">all_args</span><span>().</span><span style="color:#96b5b4;">get</span><span>(index)
+</span><span>{
+</span><span>  ...
+</span><span>}
+</span></code></pre>
+<p>Hopefully the remaining concerns involving dropping order will be resolved in the near future to allow a possible stabilization.</p>
+<h4 class="is-4 subtitle">4. Macro meta-variable expressions</h4>
+<p><a href="https://github.com/rust-lang/rust/issues/83527">https://github.com/rust-lang/rust/issues/83527</a> is really useful and allows operations that are currently impossible on stable. Despite my attempts, some questions were raised and they need to be addressed before stabilization.</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#65737e;">// Snippet extracted from the Rust project
+</span><span>
+</span><span style="color:#b48ead;">impl</span><span>&lt;$(</span><span style="color:#bf616a;">$T</span><span>: PartialEq),+&gt; PartialEq </span><span style="color:#b48ead;">for</span><span> ($(</span><span style="color:#bf616a;">$T</span><span>,)+)
+</span><span style="color:#b48ead;">where
+</span><span>  last_type!($(</span><span style="color:#bf616a;">$T</span><span>,)+): ?Sized
+</span><span>{
+</span><span>  #[</span><span style="color:#bf616a;">inline</span><span>]
+</span><span>  </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">eq</span><span>(&amp;</span><span style="color:#bf616a;">self</span><span>, </span><span style="color:#bf616a;">other</span><span>: &amp;($(</span><span style="color:#bf616a;">$T</span><span>,)+)) -&gt; </span><span style="color:#b48ead;">bool </span><span>{
+</span><span>    $( ${</span><span style="color:#96b5b4;">ignore</span><span>(T)} </span><span style="color:#bf616a;">self</span><span>.${</span><span style="color:#96b5b4;">index</span><span>()} == other.${</span><span style="color:#96b5b4;">index</span><span>()} )&amp;&amp;+
+</span><span>  }
+</span><span>
+</span><span>  ...
+</span><span>}
+</span></code></pre>
+<h4 class="is-4 subtitle">5. Nicer assert messages</h4>
+<p><a href="https://github.com/rust-lang/rust/issues/44838">https://github.com/rust-lang/rust/issues/44838</a> depends on work on the constant evaluation front which unfortunately is not my specialty. Hope that I will be able to hack the missing pieces in the next months.</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">fun</span><span>(</span><span style="color:#bf616a;">a</span><span>: Option&lt;</span><span style="color:#b48ead;">i32</span><span>&gt;, </span><span style="color:#bf616a;">b</span><span>: Option&lt;</span><span style="color:#b48ead;">i32</span><span>&gt;, </span><span style="color:#bf616a;">c</span><span>: Option&lt;</span><span style="color:#b48ead;">i32</span><span>&gt;) {
+</span><span>  assert!(
+</span><span>    [matches!(a, None), matches!(b, Some(</span><span style="color:#d08770;">1</span><span>)] == [</span><span style="color:#d08770;">true</span><span>, </span><span style="color:#d08770;">true</span><span>] &amp;&amp; matches!(c, Some(x) </span><span style="color:#b48ead;">if</span><span> x == </span><span style="color:#d08770;">2</span><span>)
+</span><span>  );
+</span><span>}
+</span><span>
+</span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">main</span><span>() {
+</span><span>  </span><span style="color:#96b5b4;">fun</span><span>(Some(</span><span style="color:#d08770;">1</span><span>), None, Some(</span><span style="color:#d08770;">2</span><span>));
+</span><span>}
+</span><span>
+</span><span style="color:#65737e;">// Assertion failed: [matches!(a, None), matches!(b, Some(1)] == [true, true] &amp;&amp; matches!(c, Some(x) if x == 2)
+</span><span style="color:#65737e;">//
+</span><span style="color:#65737e;">// With captures:
+</span><span style="color:#65737e;">//   a = Some(1)
+</span><span style="color:#65737e;">//   b = None
+</span><span style="color:#65737e;">//   c = Some(2)
+</span></code></pre>
+<h4 class="is-4 subtitle">Final words</h4>
+<p>With this brief summary and other non-listed PRs, I think I made a small but positive impact on the ecosystem. Thank you very much for all the reviewers and mentors that helped me along the way with special mentions to <a href="https://github.com/petrochenkov">petrochenkov</a>, <a href="https://github.com/Centril">Centril</a> and <a href="https://github.com/matthewjasper">matthewjasper</a>.</p>
+
+        </div>
+    </section>
+</article>
+
+
+            </main>
+
+            <footer>
+                <div class="columns is-vcentered">
+                    <div class="column is-8">
+                        Made with <a alt="Bulma" href="https://bulma.io/" target="_blank"><strong>Bulma</strong></a>
+                        and
+                        <a alt="Zola" href="https://www.getzola.org" target="_blank"><strong>Zola</strong></a>.
+                    </div>
+                    <div class="column">
+                        <div>
+                            <a href="https://github.com/c410-f3r" target="_blank" title="GitHub account">
+                                <span class="icon-text">
+                                    <span class="icon">
+                                        <img alt="Github" src="/fontawesome/github.svg">
+                                    </span>
+                                    <span>c410-f3r</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://c410-f3r.github.io/index.js"></script>
+</body>
+
+</html>
