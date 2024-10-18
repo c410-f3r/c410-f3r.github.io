@@ -44,7 +44,7 @@ impl Person {
 Unfortunately [https://github.com/rust-lang/rust/pull/75644] took one year to be reviewed but at least one subset was stabilized on version 1.63.
 
 ```rust
-// Snipper extracted from the Arbitrary project
+// Snippet extracted from the Arbitrary project
 
 fn size_hint(d: usize) -> (usize, Option<usize>) {
   crate::size_hint::and_all(&array::from_fn::<_, N, _>(|_| {
@@ -58,7 +58,7 @@ fn size_hint(d: usize) -> (usize, Option<usize>) {
 The toughest contribution, no doubt about that. [https://github.com/rust-lang/rust/pull/88642] was very challenging both technically and mentally.
 
 ```rust
-// Snipper extracted from the Clippy project
+// Snippet extracted from the Clippy project
 
 if let FormatArgsPiece::Placeholder(placeholder) = piece
   && let Ok(index) = placeholder.argument.index
@@ -75,7 +75,7 @@ Hopefully the remaining concerns involving dropping order will be resolved in th
 [https://github.com/rust-lang/rust/issues/83527] is really useful and allows operations that are currently impossible on stable. Despite my attempts, some questions were raised and they need to be addressed before stabilization.
 
 ```rust
-// Snipper extracted from the Rust project
+// Snippet extracted from the Rust project
 
 impl<$($T: PartialEq),+> PartialEq for ($($T,)+)
 where

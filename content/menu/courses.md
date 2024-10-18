@@ -5,6 +5,8 @@ title = "Courses"
 
 [extra]
 courses = [
+    { href="https://coursera.org/share/7636b2a8aafa2f4e49901f2ef5e0a036", name="PostgreSQL Essentials v16" },
+
     { href="https://coursera.org/share/7636b2a8aafa2f4e49901f2ef5e0a036", name="Machine Learning with Python" },
     { href="https://coursera.org/share/7c89b7ab0887c1ccbf3e7a280c03d898", name="Deep Neural Networks with PyTorch" },
     { href="https://coursera.org/share/9d3209bae5d0eaacb2caa117a860b8df", name="IBM AI Engineering" },
@@ -49,6 +51,7 @@ courses = [
     { href="https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/f41f24d9-de4b-5a50-9f45-c930ded8255b-caio-fernandes-de-assis-aa2af1f8-c454-490b-8788-8435b9295d97-certificate.pdf", name="Kubernetes and Cloud Native Essentials" },
     { href="https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/f41f24d9-de4b-5a50-9f45-c930ded8255b-caio-fernandes-de-assis-essentials-of-linux-system-administration-lfs201-certificate.pdf", name="Essentials of Linux System Administration" },
     { href="https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/f41f24d9-de4b-5a50-9f45-c930ded8255b-caio-fernandes-linux-networking-and-administration-lfs211-certificate.pdf", name="Linux Networking and Administration" },
+    { href="https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/f41f24d9-de4b-5a50-9f45-c930ded8255b-caio-fernandes-de-assis-831f4a18-3cbb-4fac-9204-e5648e0bd65c-certificate.pdf", name="Getting Started with Rust LFEL1002" },
     
     { href="https://udemy-certificate.s3.amazonaws.com/image/UC-8cbb9e52-cd0a-4d79-929c-569251cb09d9.jpg", name="Certified Blockchain Solutions Architect" },
     { href="https://udemy-certificate.s3.amazonaws.com/image/UC-56af82cb-6a44-4373-b6c2-8fc9433b15bd.jpg", name="Ethereum and Solidity: The Complete Developer's Guide" },
@@ -59,5 +62,6 @@ courses = [
     { href="https://udemy-certificate.s3.amazonaws.com/image/UC-AN1ATO9Z.jpg", name="Blockchain and Bitcoin Fundamentals" },
     { href="https://udemy-certificate.s3.amazonaws.com/image/UC-eebd1901-cc2d-41fa-a388-fe13b6537838.jpg", name="Secure Product Lifecycle 101" },
     { href="https://udemy-certificate.s3.amazonaws.com/image/UC-JSDPIUMC.jpg", name="Blockchain in Supply Chain Management" },
+    { href="https://udemy-certificate.s3.amazonaws.com/image/UC-2b20a4e4-bca5-47a8-a691-a3344ba656bc.jpg?v=1711842390000", name="PostgreSQL High Performance Tuning Guide" },
 ]
 +++

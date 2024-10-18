@@ -15,7 +15,7 @@ image = "/thoughts/the-fastest-websocket-implementation/intro.jpg"
   <figcaption>Adapted photo of William Warby on Unsplash.</figcaption>
 </figure>
 
-This post measures the performance of [wtx](https://github.com/c410-f3r/regular-crates/tree/main/wtx) and other projects to figure out which one is faster. If any metrics or procedures described here are flawed, feel free to point them.
+This post measures the performance of [wtx](https://github.com/c410-f3r/wtx) and other projects to figure out which one is faster. If any metrics or procedures described here are flawed, feel free to point them.
 
 ## Metrics
 
@@ -53,12 +53,12 @@ Frames tend to be small but there are applications using WebSocket to transfer d
 |fastwebsockets|Rust|<a href="https://github.com/c410-f3r/fastwebsockets">https://github.com/c410-f3r/fastwebsockets</a>|examples/echo_server.rs|
 |gorilla/websocket|Go|<a href="https://github.com/c410-f3r/websocket">https://github.com/c410-f3r/websocket</a>|examples/echo/server.go|
 |tokio-tungstenite|Rust|<a href="https://github.com/c410-f3r/tokio-tungstenite">https://github.com/c410-f3r/tokio-tungstenite</a>|examples/echo-server.rs|
-|websockets|Python|<a href="https://github.com/c410-f3r/regular-crates/blob/main/ws-bench/_websockets.py">https://github.com/c410-f3r/regular-crates/blob/main/ws-bench/_websockets.py</a>|_websockets.py|
-|wtx|Rust|<a href="https://github.com/c410-f3r/regular-crates/tree/main/wtx">https://github.com/c410-f3r/regular-crates/tree/main/wtx</a>|examples/web_socket_echo_server_raw_tokio.rs|
+|websockets|Python|<a href="https://github.com/c410-f3r/regular-crates/blob/wtx-0.5.2/ws-bench/_websockets.py">https://github.com/c410-f3r/regular-crates/blob/wtx-0.5.2/ws-bench/_websockets.py</a>|_websockets.py|
+|wtx|Rust|<a href="https://github.com/c410-f3r/wtx">https://github.com/c410-f3r/wtx</a>|wtx-instances/generic-examples/web-socket-server.rs|
 
 In order to try to ensure some level of fairness, all six projects had their files modified to remove writes to `stdout`, impose optimized builds where applicable and remove SSL or compression configurations. 
 
-The benchmark procedure is quite simple: servers listen to incoming requests on different ports, `ws-bench` binary is called with all uris and the resulting chart is generated. In fact, everything is declared in [this bash script](https://github.com/c410-f3r/regular-crates/blob/main/.scripts/ws-bench.sh).
+The benchmark procedure is quite simple: servers listen to incoming requests on different ports, the `ws-bench` binary is called with all uris and the resulting chart is generated. In fact, everything is declared in [this bash script](https://github.com/c410-f3r/regular-crates/blob/wtx-0.5.2/.scripts/ws-bench.sh).
 
 <div style="overflow-x: scroll;">
 
