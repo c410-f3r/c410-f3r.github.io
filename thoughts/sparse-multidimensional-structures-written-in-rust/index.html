@@ -1,0 +1,291 @@
+<!--
+    All icons belong to Font Awesome. Please, see https://fontawesome.com/license/free for 
+    more information.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <link href="https://c410-f3r.github.io/index.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Caio&#x27;s Stuff</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="rounded-box">
+            <header>
+                <nav class="is-size-5 navbar" role="navigation" aria-label="main navigation">
+                    <div class="navbar-brand">
+                        <a class="is-family-secondary is-paddingless is-size-4 has-text-weight-bold navbar-item" href="/" title = "Caio's stuff">Caio's Stuff</a>
+
+                        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                            data-target="topMenu">
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                        </a>
+                    </div>
+
+                    <div class="has-text-weight-light navbar-menu" id="topMenu">
+                        <div class="navbar-end">
+                            
+                            <a class="navbar-item px-4 underline" href="&#x2F;certifications" title="Certifications">
+                                <span class="icon">
+                                    <figure class="image is-16x16">
+                                        <img alt="Certifications" class="image is-16x16" src="&#x2F;fontawesome&#x2F;lightbulb.svg">
+                                    </figure>
+                                </span>
+                                <span>Certifications</span>
+                            </a>
+                            
+                            <a class="navbar-item px-4 underline" href="&#x2F;courses" title="Courses">
+                                <span class="icon">
+                                    <figure class="image is-16x16">
+                                        <img alt="Courses" class="image is-16x16" src="&#x2F;fontawesome&#x2F;school.svg">
+                                    </figure>
+                                </span>
+                                <span>Courses</span>
+                            </a>
+                            
+                            <a class="navbar-item px-4 underline" href="&#x2F;cover-letter" title="Cover letter">
+                                <span class="icon">
+                                    <figure class="image is-16x16">
+                                        <img alt="Cover letter" class="image is-16x16" src="&#x2F;fontawesome&#x2F;envelope.svg">
+                                    </figure>
+                                </span>
+                                <span>Cover letter</span>
+                            </a>
+                            
+                            <a class="navbar-item px-4 underline" href="&#x2F;curriculum.pdf" title="Curriculum">
+                                <span class="icon">
+                                    <figure class="image is-16x16">
+                                        <img alt="Curriculum" class="image is-16x16" src="&#x2F;fontawesome&#x2F;list.svg">
+                                    </figure>
+                                </span>
+                                <span>Curriculum</span>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <main>
+                
+
+<article>
+    <header>
+        <h3 class="is-3 title">
+            Sparse multidimensional structures written in Rust
+        </h3>
+    </header>
+    <section>
+        <div class="content">
+            <figure class="image">
+  <img src="/thoughts/sparse-multidimensional-structures-written-in-rust/intro.jpg" alt="Introduction">
+  <figcaption>Photo by Patrick Fore on Unsplash</figcaption>
+</figure>
+<p>Sparse structures is an exciting studying field that enables you to build, store, modify and retrieve scattered data in a fast and efficient way. Along with algebraic operations, its usage ranges from several Artificial Intelligence areas, Operations Research, simulations and many others places where, e.g., a dense (non-sparse) matrix-vector multiplication (MxV) is too costly or even pointless for very sparse problems.</p>
+<p>In this post, I am going to talk about <a href="https://github.com/c410-f3r/ndsparse/">ndsparse</a>, a batteries-included library written in <a href="https://www.rust-lang.org/">Rust</a> that is intended to provide different types of multidimensional sparse structures where you can choose the format that best suits you.</p>
+<h4 class="is-4 title">For the hopeful</h4>
+<p>Before anything else, <a href="https://github.com/c410-f3r/ndsparse/">ndsparse</a> isn't a multidimensional sparse algebra/arithmetic library (disappointment face) because of its self-contained responsibility and complexity. Futhermore, a really good implementation of such library would require a titanic amount of research, work and free time that I don't have.</p>
+<p>This intended limitation restricts the usage of this project by a lot but it is still useful for store, transform and retrieve use-cases. One can also be a hero and use some of the supported structures as a building foundation for higher level libraries.</p>
+<p>Checkout <a href="https://github.com/vbarrielle/sprs">sprs</a> for an awesome "rustic" sparse linear algebra library.</p>
+<h4 class="is-4 title">Supported formats</h4>
+<p>There are a bunch of different 2D sparse structures that determinate the space-usage and the asymptotic limit of a given operation, some are generic and others are more problem specific. E.g.: BSR, COO, CSC, CSR, DIA, DOK, ELL, JDS and LIL.</p>
+<p>Two (or three, depending on your POV) widely known formats were picked for adaptation, namely, COO and CSC/CSR.</p>
+<h6 class="is-6 subtitle">COO (Coordinate)</h6>
+<p>Probably the most intuitive format, fits gracefully for N-dimensions. Just need a set of indices and its corresponding non-zero elements.</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">use </span><span>ndsparse::coo::CooArray;
+</span><span style="color:#65737e;">// As odd as it may seem, this illustration is just a guide to get a grasp of
+</span><span style="color:#65737e;">// a 5D structure.
+</span><span style="color:#65737e;">//
+</span><span style="color:#65737e;">// The order is up to the caller. In this case, the dimensions [a, b, c, d, e] were
+</span><span style="color:#65737e;">// arranged as follows:
+</span><span style="color:#65737e;">//
+</span><span style="color:#65737e;">// a: top to bottom
+</span><span style="color:#65737e;">// b: left to right
+</span><span style="color:#65737e;">// c: front to back
+</span><span style="color:#65737e;">// d: top to bottom
+</span><span style="color:#65737e;">// e: left to right
+</span><span style="color:#65737e;">//
+</span><span style="color:#65737e;">//          ___ ___ ___            ___ ___ ___            ___ ___ ___
+</span><span style="color:#65737e;">//        /   /   /   /\         / 3 /   /   /\         /   /   /   /\
+</span><span style="color:#65737e;">//       /___/___/___/ /\       /_3_/___/___/ /\       /___/___/___/ /\
+</span><span style="color:#65737e;">//      /   /   /   /\/ /\     /   /   /   /\/ /\     /   / 4 /   /\/ /\
+</span><span style="color:#65737e;">//     /___/___/___/ /\/ /    /___/___/___/ /\/ /    /___/_4_/___/ /\/ /
+</span><span style="color:#65737e;">//    /   /   /   /\/ /\/    /   /   /   /\/ /\/    /   /   /   /\/ /\/
+</span><span style="color:#65737e;">//   /___/___/___/ /\/ /    /___/___/___/ /\/ /    /___/___/___/ /\/ /
+</span><span style="color:#65737e;">//  /   /   /   /\/1/\/    /   /   /   /\/ /\/    /   /   /   /\/ /\/
+</span><span style="color:#65737e;">// /___/___/___/ /\/ /    /___/___/___/ /\/ /    /___/___/___/ /\/ /
+</span><span style="color:#65737e;">// \___\___\___\/ /\/     \___\___\___\/ /\/     \___\___\___\/ /\/
+</span><span style="color:#65737e;">//  \___\___\___\/ /       \___\_2_\___\/ /       \___\___\___\/ /
+</span><span style="color:#65737e;">//   \___\___\___\/         \___\___\___\/         \___\___\___\/
+</span><span style="color:#65737e;">//
+</span><span style="color:#65737e;">//          ___ ___ ___            ___ ___ ___            ___ ___ ___
+</span><span style="color:#65737e;">//        /   /   /   /\         /   /   /   /\         /   /   / 6 /\
+</span><span style="color:#65737e;">//       /___/___/___/ /\       /___/___/___/ /\       /___/___/_6_/6/\
+</span><span style="color:#65737e;">//      /   /   /   /\/ /\     /   /   /   /\/ /\     /   /   /   /\/ /\
+</span><span style="color:#65737e;">//     /___/___/___/ /\/ /    /___/___/___/ /\/ /    /___/___/___/ /\/7/
+</span><span style="color:#65737e;">//    /   /   /   /\/ /\/    /   /   /   /\/ /\/    /   /   /   /\/ /\/
+</span><span style="color:#65737e;">//   /___/___/___/ /\/ /    /___/___/___/ /\/ /    /___/___/___/ /\/ /
+</span><span style="color:#65737e;">//  /   /   /   /\/ /\/    /   /   /   /\/ /\/    /   /   /   /\/ /\/
+</span><span style="color:#65737e;">// /___/___/___/ /\/ /    /___/___/___/ /\/ /    /___/___/___/ /\/ /
+</span><span style="color:#65737e;">// \___\___\___\/ /\/     \___\___\___\/ /\/     \___\___\___\/ /\/
+</span><span style="color:#65737e;">//  \___\___\___\/ /       \___\___\___\/ /       \___\___\___\/ /
+</span><span style="color:#65737e;">//   \___\___\___\/         \___\_5_\___\/         \___\___\___\/
+</span><span style="color:#b48ead;">let</span><span> _coo_array_5 = CooArray::new(
+</span><span>    [</span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">4</span><span>, </span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">3</span><span>],
+</span><span>    [
+</span><span>        ([</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">2</span><span>].</span><span style="color:#96b5b4;">into</span><span>(), </span><span style="color:#d08770;">1</span><span>),
+</span><span>        ([</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">1</span><span>].</span><span style="color:#96b5b4;">into</span><span>(), </span><span style="color:#d08770;">2</span><span>),
+</span><span>        ([</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">0</span><span>].</span><span style="color:#96b5b4;">into</span><span>(), </span><span style="color:#d08770;">3</span><span>),
+</span><span>        ([</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">1</span><span>].</span><span style="color:#96b5b4;">into</span><span>(), </span><span style="color:#d08770;">4</span><span>),
+</span><span>        ([</span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">1</span><span>].</span><span style="color:#96b5b4;">into</span><span>(), </span><span style="color:#d08770;">5</span><span>),
+</span><span>        ([</span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">2</span><span>].</span><span style="color:#96b5b4;">into</span><span>(), </span><span style="color:#d08770;">6</span><span>),
+</span><span>        ([</span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">2</span><span>].</span><span style="color:#96b5b4;">into</span><span>(), </span><span style="color:#d08770;">7</span><span>),
+</span><span>    ],
+</span><span>);
+</span></code></pre>
+<p>You might be wondering what are these <code>Array</code> and <code>into()</code> things. Well, we will get there in a minute.</p>
+<h6 class="is-6 subtitle">CSL (Compressed Sparse Line)</h6>
+<p>A generalization of the Compressed Sparse Column (CSC) and Compressed Sparse Row (CSR) formats for N-dimensions. Since all data is compressed line-by-line, this nomenclature came naturally.</p>
+<p>Basically, three indexed storage are needed, one for the data itself, one for the line index of each data and one to indicate the number of non-zero elements of each line. Here, each line can also be interpreted as the innermost dimension or the right most dimension.</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">use </span><span>ndsparse::csl::CslArray;
+</span><span style="color:#65737e;">// Two cuboids illustrating a [2, 3, 4, 5] 4D in a [w, y, z, x] order, i.e., each &quot;line&quot;
+</span><span style="color:#65737e;">// or 1D representation is a left to right row and each &quot;matrix&quot; or 2D representation
+</span><span style="color:#65737e;">// is filled in a top-down manner.
+</span><span style="color:#65737e;">//
+</span><span style="color:#65737e;">//  w: left to right
+</span><span style="color:#65737e;">//  y: top to bottom
+</span><span style="color:#65737e;">//  z: front to back
+</span><span style="color:#65737e;">//  x: left to right
+</span><span style="color:#65737e;">// 
+</span><span style="color:#65737e;">//          ___ ___ ___ ___ ___            ___ ___ ___ ___ ___
+</span><span style="color:#65737e;">//        /   /   /   / 4 / 5 /\         /   /   /   /   /   /\
+</span><span style="color:#65737e;">//       /___/___/___/_4_/_5_/5/\       /___/___/___/___/___/ /\
+</span><span style="color:#65737e;">//      /   /   /   /   /   /\/ /\     /   /   / 9 /   /   /\/ /\
+</span><span style="color:#65737e;">//     /___/___/___/___/___/ /\/ /    /___/___/_9_/___/___/ /\/ /
+</span><span style="color:#65737e;">//    /   / 3 /   /   /   /\/ /\/    /   /   /   /   /   /\/ /\/
+</span><span style="color:#65737e;">//   /___/_3_/___/___/___/ /\/ /    /___/_ _/___/___/___/ /\/ /
+</span><span style="color:#65737e;">//  / 1 /   /   / 2 /   /\/ /\/    /   /   /   /   /   /\/ /\/
+</span><span style="color:#65737e;">// /_1_/___/___/_2_/___/ /\/8/    /___/___/___/___/___/ /\/ /
+</span><span style="color:#65737e;">// \_1_\___\___\_2_\___\/ /\/     \___\___\___\___\___\/ /\/
+</span><span style="color:#65737e;">//  \___\___\_6_\___\___\/ /       \___\___\___\___\___\/ /
+</span><span style="color:#65737e;">//   \___\___\_7_\___\___\/         \___\___\___\___\___\/
+</span><span style="color:#b48ead;">let</span><span> _csl_array_4_ = CslArray::new(
+</span><span>  [</span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">4</span><span>, </span><span style="color:#d08770;">5</span><span>],
+</span><span>  [</span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">4</span><span>, </span><span style="color:#d08770;">5</span><span>, </span><span style="color:#d08770;">6</span><span>, </span><span style="color:#d08770;">7</span><span>, </span><span style="color:#d08770;">8</span><span>, </span><span style="color:#d08770;">9</span><span>],
+</span><span>  [</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">4</span><span>, </span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">4</span><span>, </span><span style="color:#d08770;">2</span><span>],
+</span><span>  [</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">5</span><span>, </span><span style="color:#d08770;">6</span><span>, </span><span style="color:#d08770;">6</span><span>, </span><span style="color:#d08770;">6</span><span>, </span><span style="color:#d08770;">6</span><span>, </span><span style="color:#d08770;">7</span><span>, </span><span style="color:#d08770;">8</span><span>, </span><span style="color:#d08770;">8</span><span>, </span><span style="color:#d08770;">8</span><span>, </span><span style="color:#d08770;">8</span><span>, </span><span style="color:#d08770;">8</span><span>, </span><span style="color:#d08770;">9</span><span>, </span><span style="color:#d08770;">9</span><span>, </span><span style="color:#d08770;">9</span><span>, </span><span style="color:#d08770;">9</span><span>, </span><span style="color:#d08770;">9</span><span>, </span><span style="color:#d08770;">9</span><span>, </span><span style="color:#d08770;">9</span><span>, </span><span style="color:#d08770;">9</span><span>, </span><span style="color:#d08770;">9</span><span>, </span><span style="color:#d08770;">9</span><span>],
+</span><span>);
+</span></code></pre>
+<p>Yes, each additional dimension significantly raises the number of line offsets. The good thing is the possibility of slicing sub-dimensions views and the bad thing is obviously the increased space usage.</p>
+<p>If you are still confused or don't want to manually create instances, it is easier to construct a valid CSL by using <a href="https://docs.rs/ndsparse/0.2.1/ndsparse/csl/struct.CslLineConstructor.html">CslLineConstructor</a>.</p>
+<h4 class="is-4 title">Rust-ish features</h4>
+<figure class="image">
+  <img src="/thoughts/sparse-multidimensional-structures-written-in-rust/rust.jpg" alt="Rust">
+  <figcaption>Photo by David Boca on Unsplash</figcaption>
+</figure>
+<p>Have you ever heard of Rust? If not, you should probably start getting used to it. Currently, several companies are using it <a href="https://www.rust-lang.org/production/users">[1]</a> and several programs are being written or rewritten in Rust like Firefox, ripgrep and librsvg. The reasons for such success are numerous: It is very fast, includes high-level facilities, the ownership rules prevent many memory management pitfalls (as well as thread safety), has an incredible community and many other cool things.</p>
+<p>Unfortunately, for truly N-dimensional structures, the nightly constant generics feature is a hard requirement and even with it, there are no std implementations for arrays greater than 32 elements <a href="https://github.com/rust-lang/rust/issues/61415">[2]</a> <a href="https://github.com/rust-lang/rust/pull/62435">[3]</a>, which leads to the creation of the <a href="https://docs.rs/ndsparse/0.2.1/ndsparse/struct.ArrayWrapper.html">ArrayWrapper</a> alternative that is used heavily internally, thus, the <code>Into::into()</code> method conversion from <code>[T; N]</code> to <code>ArrayWrapper&lt;T, N&gt;</code>.</p>
+<p>Putting all that aside, <a href="https://github.com/c410-f3r/ndsparse/">ndsparse</a> has a lot of <a href="https://github.com/c410-f3r/ndsparse/#optional-features">optional features</a>. Initially, considering a <code>#[no_std]</code> and "no <code>alloc</code>" environment, none of them are used by default, giving the user the freedom to choose whatever is required.</p>
+<pre data-lang="toml" style="background-color:#2b303b;color:#c0c5ce;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[dependencies]
+</span><span style="color:#bf616a;">ndsparse </span><span>= { </span><span style="color:#bf616a;">features </span><span>= [&quot;</span><span style="color:#a3be8c;">alloc</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">with_arrayvec</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">with_rand</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">with_rayon</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">with_serde</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">with_smallvec</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">with_staticvec</span><span>&quot;], </span><span style="color:#bf616a;">version </span><span>= &quot;</span><span style="color:#a3be8c;">0.2</span><span>&quot; }
+</span></code></pre>
+<h6 class="is-6 subtitle">Different backends for storage</h6>
+<p>Owned structures can use static arrays, heap-allocated vectors or even third-party dependencies like <a href="https://github.com/bluss/arrayvec">ArrayVec</a> to store the underlying data.</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">use </span><span>ndsparse::{
+</span><span>  coo::{CooRef, CooStaticVec},
+</span><span>  csl::{CslRef, CslSmallVec, CslStaticVec}
+</span><span>};
+</span><span>
+</span><span style="color:#65737e;">// CSL
+</span><span>
+</span><span style="color:#b48ead;">let mut</span><span> csl_small_vec = CslSmallVec::&lt;</span><span style="color:#b48ead;">i32</span><span>, 2, 5, 26&gt;::default();
+</span><span style="color:#b48ead;">let mut</span><span> csl_static_vec = CslStaticVec::&lt;</span><span style="color:#b48ead;">i32</span><span>, 2, 5, 26&gt;::default();
+</span><span>csl_small_vec.</span><span style="color:#96b5b4;">constructor</span><span>().</span><span style="color:#96b5b4;">next_outermost_dim</span><span>(</span><span style="color:#d08770;">5</span><span>).</span><span style="color:#96b5b4;">push_line</span><span>(&amp;[</span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">2</span><span>], &amp;[</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">3</span><span>]);
+</span><span>csl_static_vec.</span><span style="color:#96b5b4;">constructor</span><span>().</span><span style="color:#96b5b4;">next_outermost_dim</span><span>(</span><span style="color:#d08770;">5</span><span>).</span><span style="color:#96b5b4;">push_line</span><span>(&amp;[</span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">2</span><span>], &amp;[</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">3</span><span>]);
+</span><span>assert!(
+</span><span>  csl_small_vec.</span><span style="color:#96b5b4;">line</span><span>([</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">0</span><span>]) == Some(CslRef::new([</span><span style="color:#d08770;">5</span><span>], &amp;[</span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">2</span><span>][..], &amp;[</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">3</span><span>][..], &amp;[</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">2</span><span>][..]))
+</span><span>);
+</span><span>assert!(csl_small_vec.</span><span style="color:#96b5b4;">line</span><span>([</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">0</span><span>]) == csl_static_vec.</span><span style="color:#96b5b4;">line</span><span>([</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">0</span><span>]));
+</span><span>
+</span><span style="color:#65737e;">// COO
+</span><span>
+</span><span style="color:#b48ead;">let</span><span> coo_ref_data = [([</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">0</span><span>].</span><span style="color:#96b5b4;">into</span><span>(), </span><span style="color:#d08770;">1</span><span>)];
+</span><span style="color:#b48ead;">let</span><span> coo_ref = CooRef::new([</span><span style="color:#d08770;">9</span><span>, </span><span style="color:#d08770;">9</span><span>, </span><span style="color:#d08770;">9</span><span>], &amp;coo_ref_data[..]);
+</span><span style="color:#b48ead;">let</span><span> coo_static_vec = CooStaticVec::new([</span><span style="color:#d08770;">9</span><span>, </span><span style="color:#d08770;">9</span><span>, </span><span style="color:#d08770;">9</span><span>], [([</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">0</span><span>].</span><span style="color:#96b5b4;">into</span><span>(), </span><span style="color:#d08770;">1</span><span>)]);
+</span><span>assert!(coo_ref.</span><span style="color:#96b5b4;">value</span><span>([</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">0</span><span>]) == Some(&amp;</span><span style="color:#d08770;">1</span><span>));
+</span><span>assert!(coo_ref.</span><span style="color:#96b5b4;">value</span><span>([</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">0</span><span>]) == coo_static_vec.</span><span style="color:#96b5b4;">value</span><span>([</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">0</span><span>]));
+</span></code></pre>
+<h6 class="is-6 subtitle">Iterators and parallel iterators</h6>
+<p>Outermost iterators (first or left most dimension) for CSL can be retrieved in parallel using <a href="https://github.com/rayon-rs/rayon">rayon</a>. Pretty useful for very large structures.</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">use </span><span>rayon::prelude::*;
+</span><span style="color:#b48ead;">let</span><span> are_equal = some_csl
+</span><span>  .</span><span style="color:#96b5b4;">outermost_rayon_iter</span><span>()
+</span><span>  .</span><span style="color:#96b5b4;">enumerate</span><span>()
+</span><span>  .</span><span style="color:#96b5b4;">all</span><span>(|(</span><span style="color:#bf616a;">idx</span><span>, </span><span style="color:#bf616a;">csl_ref</span><span>)| csl_ref == some_csl.</span><span style="color:#96b5b4;">outermost_iter</span><span>().</span><span style="color:#96b5b4;">nth</span><span>(idx).</span><span style="color:#96b5b4;">unwrap</span><span>());
+</span><span>assert!(are_equal, </span><span style="color:#d08770;">true</span><span>);
+</span></code></pre>
+<p>COO is more straightforward. For example, one can use <code>some_coo.data().par_iter().for_each(|_| {})</code>.</p>
+<h4 class="is-4 title">Future</h4>
+<p>Slicing isn't great for CSL, COO should receive more love, there isn't any agnostic transformation like <code>resize</code> or <code>transpose</code> and more formats could be added. All of these TODO's might be added at some point in the future with enough free time and willingness.</p>
+<p>Last but not the least, I <em>think</em> that I invented a new sparse structured that is space-efficient and enables a fine-grained control over sparsity. More on this in a later post.</p>
+
+        </div>
+    </section>
+</article>
+
+
+            </main>
+
+            <footer>
+                <div class="columns is-vcentered">
+                    <div class="column is-8">
+                        Made with <a alt="Bulma" href="https://bulma.io/" target="_blank"><strong>Bulma</strong></a>
+                        and
+                        <a alt="Zola" href="https://www.getzola.org" target="_blank"><strong>Zola</strong></a>.
+                    </div>
+                    <div class="column">
+                        <div>
+                            <a href="https://github.com/c410-f3r" target="_blank" title="GitHub account">
+                                <span class="icon-text">
+                                    <span class="icon">
+                                        <img alt="Github" src="/fontawesome/github.svg">
+                                    </span>
+                                    <span>c410-f3r</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://c410-f3r.github.io/index.js"></script>
+</body>
+
+</html>

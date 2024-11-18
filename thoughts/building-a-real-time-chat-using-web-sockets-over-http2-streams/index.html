@@ -1,0 +1,529 @@
+<!--
+    All icons belong to Font Awesome. Please, see https://fontawesome.com/license/free for 
+    more information.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <link href="https://c410-f3r.github.io/index.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Caio&#x27;s Stuff</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="rounded-box">
+            <header>
+                <nav class="is-size-5 navbar" role="navigation" aria-label="main navigation">
+                    <div class="navbar-brand">
+                        <a class="is-family-secondary is-paddingless is-size-4 has-text-weight-bold navbar-item" href="/" title = "Caio's stuff">Caio's Stuff</a>
+
+                        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                            data-target="topMenu">
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                        </a>
+                    </div>
+
+                    <div class="has-text-weight-light navbar-menu" id="topMenu">
+                        <div class="navbar-end">
+                            
+                            <a class="navbar-item px-4 underline" href="&#x2F;certifications" title="Certifications">
+                                <span class="icon">
+                                    <figure class="image is-16x16">
+                                        <img alt="Certifications" class="image is-16x16" src="&#x2F;fontawesome&#x2F;lightbulb.svg">
+                                    </figure>
+                                </span>
+                                <span>Certifications</span>
+                            </a>
+                            
+                            <a class="navbar-item px-4 underline" href="&#x2F;courses" title="Courses">
+                                <span class="icon">
+                                    <figure class="image is-16x16">
+                                        <img alt="Courses" class="image is-16x16" src="&#x2F;fontawesome&#x2F;school.svg">
+                                    </figure>
+                                </span>
+                                <span>Courses</span>
+                            </a>
+                            
+                            <a class="navbar-item px-4 underline" href="&#x2F;cover-letter" title="Cover letter">
+                                <span class="icon">
+                                    <figure class="image is-16x16">
+                                        <img alt="Cover letter" class="image is-16x16" src="&#x2F;fontawesome&#x2F;envelope.svg">
+                                    </figure>
+                                </span>
+                                <span>Cover letter</span>
+                            </a>
+                            
+                            <a class="navbar-item px-4 underline" href="&#x2F;curriculum.pdf" title="Curriculum">
+                                <span class="icon">
+                                    <figure class="image is-16x16">
+                                        <img alt="Curriculum" class="image is-16x16" src="&#x2F;fontawesome&#x2F;list.svg">
+                                    </figure>
+                                </span>
+                                <span>Curriculum</span>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <main>
+                
+
+<article>
+    <header>
+        <h3 class="is-3 title">
+            Building a real-time chat using WebSockets over HTTP&#x2F;2 streams
+        </h3>
+    </header>
+    <section>
+        <div class="content">
+            <figure class="image is-16by9">
+  <iframe
+    allowfullscreen
+    class="has-ratio"
+    frameborder="0"
+    height="360"
+    src="https://files.catbox.moe/xvweao.webm"
+    width="640"
+  ></iframe>
+</figure>
+<p>In this post we are going to build a backend powered by <a href="https://github.com/c410-f3r/wtx">WTX</a> and a frontend with <a href="https://svelte.dev/docs/kit/introduction">SvelteKit</a> and several other tools to enable the real-time communication between multiple web clients.</p>
+<p>All code is available at <a href="https://github.com/c410-f3r/blog-posts">https://github.com/c410-f3r/blog-posts</a> in the <code>live-chat</code> directory.</p>
+<h2 id="out-of-scope">Out of scope</h2>
+<p>Before we dive in, it is important to clarify a couple of things that are out of scope.</p>
+<ul>
+<li>
+<p><strong>Production-grade app</strong>: The intention is to mainly demonstrate one of the many capabilities of <a href="https://github.com/c410-f3r/wtx">WTX</a>, all techniques presented here are not optimized for production environments that require the robust handling of numerous requests. However, you can extract as many information as needed to create your own scalable solution.</p>
+</li>
+<li>
+<p><strong>Decentralized chat</strong>: We are dealing with a classic client-server architecture so if you are looking to build a decentralized chat, take a look at <code>WebRTC</code>. For example, in our application a client <code>C1</code> must send a message <code>M</code> to server <code>S</code> to broadcast the same message <code>M</code> to client <code>C2</code> and vice-versa.</p>
+</li>
+</ul>
+<h2 id="what-is-wtx">What is WTX?</h2>
+<p><a href="https://github.com/c410-f3r/wtx">WTX</a> is, among other things, a <a href="https://datatracker.ietf.org/doc/html/rfc6455">RFC6455</a>, <a href="https://datatracker.ietf.org/doc/html/rfc7541">RFC7541</a>, <a href="https://datatracker.ietf.org/doc/html/rfc7692">RFC7692</a>, <a href="https://datatracker.ietf.org/doc/html/rfc8441">RFC8441</a> and <a href="https://datatracker.ietf.org/doc/html/rfc9113">RFC9113</a> implementation written in Rust intended to allow the development of web applications through a built-in server framework, a built-in <code>PostgreSQL</code> connector, a built-in <code>WebSocket</code> handler and a built-in <code>gRPC</code> manager. There is also a built-in API client framework that facilitates the maintainability of large endpoints.</p>
+<p>Performance is top-class, here goes a list of related benchmarks: <a href="https://c410-f3r.github.io/wtx-bench/">https://c410-f3r.github.io/wtx-bench/</a>, <a href="https://github.com/diesel-rs/metrics">https://github.com/diesel-rs/metrics</a>, <a href="https://i.imgur.com/Iv2WzJV.jpg">https://i.imgur.com/Iv2WzJV.jpg</a>, <a href="https://github.com/LesnyRumcajs/grpc_bench/discussions/475">https://github.com/LesnyRumcajs/grpc_bench/discussions/475</a>, <a href="https://i.imgur.com/vf2tYxY.jpg">https://i.imgur.com/vf2tYxY.jpg</a>.</p>
+<p>Feel free to point out any misunderstandings, suggestions, or misconfigurations regarding the benchmarks. If you are aware of other benchmark suites, please let me know.</p>
+<h2 id="deno-svelte-sveltekit-tailwind-css">Deno / Svelte / SvelteKit / Tailwind CSS</h2>
+<p>These are basically the technologies used in the frontend, such combination offers a powerful, efficient and an up-to-date web development stack. <a href="https://deno.com/">Deno</a> provides a modern runtime with built-in TypeScript support, <a href="https://svelte.dev/">Svelte</a> compiles components to optimized JavaScript code, <a href="https://svelte.dev/docs/kit/introduction">SvelteKit</a> (official framework) presents tools like routing or server-side rendering (SSR) and <a href="https://tailwindcss.com/">Tailwind CSS</a> streamlines UI development with useful utility classes.</p>
+<p>The versions used are: <code>Deno 2</code>, <code>Svelte 5</code>, <code>SvelteKit 2</code>, and <code>Tailwind CSS 4.0.0-alpha.34</code>. Despite still being in alpha, the upcoming version of Tailwind CSS introduces significant improvements, making it worth a try.</p>
+<h2 id="websockets-over-http-2-streams">WebSockets over HTTP/2 streams</h2>
+<p>HTTP/2 is the second major version of the Hypertext Transfer Protocol, introduced in 2015 to improve web performance in <em><strong>concurrent scenarios</strong></em>, it addresses some limitations of HTTP/1.1 maintaining backwards compatibility.</p>
+<p>While HTTP/2 inherently supports full-duplex communication, web browsers typically don't expose this functionality directly to developers and that is why WebSocket tunneling over HTTP/2 is important.</p>
+<ol>
+<li>Servers can efficiently handle multiple concurrent streams within a single TCP connection</li>
+<li>Client applications can continue using existing WebSocket APIs without modification</li>
+</ol>
+<p>Specified in <a href="https://datatracker.ietf.org/doc/html/rfc8441">https://datatracker.ietf.org/doc/html/rfc8441</a>, very few projects support such a feature.</p>
+<h2 id="futures">Futures</h2>
+<p>Rust <code>Futures</code> represent an abstraction for asynchronous programming, enabling developers to write non-blocking code that can perform multiple operations concurrently.</p>
+<p>We will be making extensive use of manual <code>Futures</code> and related structures to synchronize clients in our system, if you are not already familiar with the topic, it probably worth to take a look at <a href="https://rust-lang.github.io/async-book/">https://rust-lang.github.io/async-book/</a> or <a href="https://book.async.rs/concepts/futures">https://book.async.rs/concepts/futures</a>.</p>
+<h2 id="architecture">Architecture</h2>
+<p>There are two phases. In the handshake phase <code>Client 1</code> connects to the server and awaits for someone to show-up. Once <code>Client 2</code> connects, the server matches both parties and then signals <code>Client 1</code> to awake from its idle state. A new chat has been established.</p>
+<figure class="image">
+  <img src="/thoughts/building-a-real-time-chat-using-web-sockets-over-http2-streams/handshake.jpg" alt="Handshake">
+  <figcaption>High-level handshake procedure</figcaption>
+</figure>
+<p>In the connection phase there are two tasks racing for completion for each client, one receives local messages and the other receives remote messages. When the disconnect button is activated by any user both sessions are dropped.</p>
+<figure class="image">
+  <img src="/thoughts/building-a-real-time-chat-using-web-sockets-over-http2-streams/connection.jpg" alt="Connection">
+  <figcaption>High-level connection procedure</figcaption>
+</figure>
+<p>Bare in mind that these illustrations are just a tool to help understanding the architecture. They are not sequence diagrams nor the events happen in sequential order.</p>
+<h2 id="frontend">Frontend</h2>
+<p>Deno 2 is a significant update with its native support for npm packages and developers also benefit from built-in tooling, including a linter and formatter. Unfortunately, Svelte support is still under development (<a href="https://github.com/denoland/deno/issues/17248">https://github.com/denoland/deno/issues/17248</a>) so let's just follow the standard SvelteKit installation procedure using the default parameters.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">dpx</span><span> sv create frontend
+</span><span style="color:#96b5b4;">cd</span><span> frontend
+</span><span style="color:#bf616a;">deno</span><span> install
+</span><span style="color:#bf616a;">deno</span><span> run dev
+</span></code></pre>
+<p>UI is quite simply, a top-level text indicates what the user should do and a box where all the messages will be placed is centered in the middle of the screen. As stated before, Tailwind CSS is responsible for the styling so checkout <a href="https://tailwindcss.com">https://tailwindcss.com</a> if you are not aware of the classes used in the HTML blocks.</p>
+<pre data-lang="html" style="background-color:#2b303b;color:#c0c5ce;" class="language-html "><code class="language-html" data-lang="html"><span>&lt;</span><span style="color:#bf616a;">div </span><span style="color:#d08770;">class</span><span>=&quot;</span><span style="color:#a3be8c;">bg-gray-100 flex flex-col h-screen w-screen</span><span>&quot;&gt;
+</span><span>	&lt;</span><span style="color:#bf616a;">div </span><span style="color:#d08770;">class</span><span>=&quot;</span><span style="color:#a3be8c;">text-center text-gray-500 text-sm py-2</span><span>&quot;&gt;
+</span><span>		&lt;</span><span style="color:#bf616a;">h5 </span><span style="color:#d08770;">class</span><span>=&quot;</span><span style="color:#a3be8c;">font-bold text-blue-900</span><span>&quot;&gt;Real-time chat! Click on connection button and wait for someone else to join.&lt;/</span><span style="color:#bf616a;">h5</span><span>&gt;
+</span><span>	&lt;/</span><span style="color:#bf616a;">div</span><span>&gt;
+</span><span>	&lt;</span><span style="color:#bf616a;">div
+</span><span>		</span><span style="color:#d08770;">class</span><span>=&quot;</span><span style="color:#a3be8c;">bg-white border border-gray-300 flex flex-col grow max-w-4xl mx-auto shadow-lg w-full</span><span>&quot;
+</span><span>	&gt;
+</span><span>	&lt;/</span><span style="color:#bf616a;">div</span><span>&gt;
+</span><span>&lt;/</span><span style="color:#bf616a;">div</span><span>&gt;
+</span></code></pre>
+<p><code>Svelte 5</code> has a cool feature called <code>snippet</code> that allows the creation of reusable chunks of markup inside components, which avoids the writing of duplicated code. In my opinion, such a feature also makes the code more maintainable.</p>
+<pre data-lang="html" style="background-color:#2b303b;color:#c0c5ce;" class="language-html "><code class="language-html" data-lang="html"><span>&lt;</span><span style="color:#bf616a;">div </span><span style="color:#d08770;">class</span><span>=&quot;</span><span style="color:#a3be8c;">h-full overflow-y-auto p-4 space-y-2</span><span>&quot;&gt;
+</span><span>  {#each chatHistory as chat}
+</span><span>    {#if chat.type === &#39;received&#39;}
+</span><span>      {@render receivedMessage(chat.text)}
+</span><span>    {:else}
+</span><span>      {@render sentMessage(chat.text)}
+</span><span>    {/if}
+</span><span>  {/each}
+</span><span>&lt;/</span><span style="color:#bf616a;">div</span><span>&gt;
+</span><span>&lt;</span><span style="color:#bf616a;">div </span><span style="color:#d08770;">class</span><span>=&quot;</span><span style="color:#a3be8c;">bg-gray-50 border-t border-gray-300 p-4</span><span>&quot;&gt;
+</span><span>  &lt;</span><span style="color:#bf616a;">div </span><span style="color:#d08770;">class</span><span>=&quot;</span><span style="color:#a3be8c;">flex flex-row gap-4 hidden items-center</span><span>&quot;&gt;
+</span><span>    {@render connectionButton()}
+</span><span>    {@render messageField()}
+</span><span>    {@render sendButton()}
+</span><span>  &lt;/</span><span style="color:#bf616a;">div</span><span>&gt;
+</span><span>&lt;/</span><span style="color:#bf616a;">div</span><span>&gt;
+</span></code></pre>
+<p>The majority of components and buttons defined in these snippets are controlled by variables in the script section using Svelte's reactive state.</p>
+<pre data-lang="html" style="background-color:#2b303b;color:#c0c5ce;" class="language-html "><code class="language-html" data-lang="html"><span>{#snippet connectionButton()}
+</span><span>	&lt;</span><span style="color:#bf616a;">button
+</span><span>		</span><span style="color:#d08770;">class</span><span>=&quot;</span><span style="color:#a3be8c;">{connectionProps.connectionButtonBg} cursor-pointer px-4 py-2 rounded-lg text-white transition sm:w-auto w-full</span><span>&quot;
+</span><span>		</span><span style="color:#d08770;">onclick</span><span>=</span><span style="color:#d08770;">{connection}</span><span>&gt;{connectionProps.connectionButtonLabel}&lt;/</span><span style="color:#bf616a;">button
+</span><span>	&gt;
+</span><span>{/snippet}
+</span><span>
+</span><span>{#snippet messageField()}
+</span><span>	&lt;</span><span style="color:#bf616a;">input
+</span><span>		</span><span style="color:#d08770;">class</span><span>=&quot;</span><span style="color:#a3be8c;">border border-gray-300 disabled:cursor-not-allowed grow p-2 rounded-lg w-full</span><span>&quot;
+</span><span>		</span><span style="color:#d08770;">disabled</span><span>=</span><span style="color:#a3be8c;">{connectionProps.areElementsDisabled}
+</span><span>		</span><span style="color:#d08770;">onkeydown</span><span>=</span><span style="color:#d08770;">{(e) </span><span>=&gt; {
+</span><span>			if (e.key === &#39;Enter&#39;) {
+</span><span>				send();
+</span><span>			}
+</span><span>		}}
+</span><span>		placeholder={connectionProps.messageFieldPlaceholder}
+</span><span>		type=&quot;text&quot;
+</span><span>		bind:value={messageFieldValue}
+</span><span>	/&gt;
+</span><span>{/snippet}
+</span><span>
+</span><span>{#snippet receivedMessage(message: string)}
+</span><span>	&lt;</span><span style="color:#bf616a;">div </span><span style="color:#d08770;">class</span><span>=&quot;</span><span style="color:#a3be8c;">flex justify-start</span><span>&quot;&gt;
+</span><span>		&lt;</span><span style="color:#bf616a;">div </span><span style="color:#d08770;">class</span><span>=&quot;</span><span style="color:#a3be8c;">bg-gray-200 max-w-xs px-4 py-2 rounded-lg text-black</span><span>&quot;&gt;
+</span><span>			{message}
+</span><span>		&lt;/</span><span style="color:#bf616a;">div</span><span>&gt;
+</span><span>	&lt;/</span><span style="color:#bf616a;">div</span><span>&gt;
+</span><span>{/snippet}
+</span><span>
+</span><span>{#snippet sendButton()}
+</span><span>	&lt;</span><span style="color:#bf616a;">button
+</span><span>		</span><span style="color:#d08770;">class</span><span>=&quot;</span><span style="color:#a3be8c;">bg-blue-500 enabled:hover:bg-blue-600 disabled:cursor-not-allowed cursor-pointer disabled:opacity-50 px-4 py-2 rounded-lg text-white transition sm:w-auto w-full</span><span>&quot;
+</span><span>		</span><span style="color:#d08770;">disabled</span><span>=</span><span style="color:#a3be8c;">{connectionProps.areElementsDisabled}
+</span><span>		</span><span style="color:#d08770;">onclick</span><span>=</span><span style="color:#d08770;">{send}</span><span>&gt;Send&lt;/</span><span style="color:#bf616a;">button
+</span><span>	&gt;
+</span><span>{/snippet}
+</span><span>
+</span><span>{#snippet sentMessage(message: string)}
+</span><span>	&lt;</span><span style="color:#bf616a;">div </span><span style="color:#d08770;">class</span><span>=&quot;</span><span style="color:#a3be8c;">flex justify-end</span><span>&quot;&gt;
+</span><span>		&lt;</span><span style="color:#bf616a;">div </span><span style="color:#d08770;">class</span><span>=&quot;</span><span style="color:#a3be8c;">bg-blue-500 max-w-xs px-4 py-2 rounded-lg text-white</span><span>&quot;&gt;
+</span><span>			{message}
+</span><span>		&lt;/</span><span style="color:#bf616a;">div</span><span>&gt;
+</span><span>	&lt;/</span><span style="color:#bf616a;">div</span><span>&gt;
+</span><span>{/snippet}
+</span></code></pre>
+<p>When an user clicks on the 'Connect' button its background color changes to blue signing that it is necessary to wait for someone to join. Once a match occurs the server sends an "OK" response and the same button changes to a disconnection device while the remaining elements are activated for interaction.</p>
+<p>A sent message creates a new entry of type <code>sent</code> in the reactive <code>chatHistory</code> array, consequently, the UI is updated to reflect what was recently submitted. Similar procedure happens when a message is received in the WebSocket connection.</p>
+<p>When clicked, the disconnection button closes the WebSocket connection and becomes again a connection button.</p>
+<pre data-lang="html" style="background-color:#2b303b;color:#c0c5ce;" class="language-html "><code class="language-html" data-lang="html"><span>&lt;</span><span style="color:#bf616a;">script </span><span style="color:#d08770;">lang</span><span>=&quot;</span><span style="color:#a3be8c;">ts</span><span>&quot;&gt;
+</span><span>	</span><span style="color:#bf616a;">interface ConnectionProps </span><span>{
+</span><span>		areElementsDisabled: </span><span style="color:#bf616a;">boolean</span><span>;
+</span><span>		connectionButtonBg: </span><span style="color:#bf616a;">string</span><span>;
+</span><span>		connectionButtonLabel: </span><span style="color:#bf616a;">string</span><span>;
+</span><span>		messageFieldPlaceholder: </span><span style="color:#bf616a;">string</span><span>;
+</span><span>	}
+</span><span>
+</span><span>	</span><span style="color:#b48ead;">const </span><span style="color:#bf616a;">connect</span><span>: </span><span style="color:#bf616a;">ConnectionProps </span><span>= {
+</span><span>		areElementsDisabled: </span><span style="color:#d08770;">true</span><span>,
+</span><span>		connectionButtonBg: &#39;</span><span style="color:#a3be8c;">bg-green-500 hover:bg-green-600</span><span>&#39;,
+</span><span>		connectionButtonLabel: &#39;</span><span style="color:#a3be8c;">Connect</span><span>&#39;,
+</span><span>		messageFieldPlaceholder: &quot;</span><span style="color:#a3be8c;">Click on &#39;Connect&#39; to start a conversation</span><span>&quot;
+</span><span>	};
+</span><span>	</span><span style="color:#b48ead;">const </span><span style="color:#bf616a;">disconect</span><span>: </span><span style="color:#bf616a;">ConnectionProps </span><span>= {
+</span><span>		areElementsDisabled: </span><span style="color:#d08770;">false</span><span>,
+</span><span>		connectionButtonBg: &#39;</span><span style="color:#a3be8c;">bg-red-500 hover:bg-red-600</span><span>&#39;,
+</span><span>		connectionButtonLabel: &#39;</span><span style="color:#a3be8c;">Disconnect</span><span>&#39;,
+</span><span>		messageFieldPlaceholder: &#39;</span><span style="color:#a3be8c;">Connected! Type your message</span><span>&#39;
+</span><span>	};
+</span><span>	</span><span style="color:#b48ead;">const </span><span style="color:#bf616a;">waiting</span><span>: </span><span style="color:#bf616a;">ConnectionProps </span><span>= {
+</span><span>		areElementsDisabled: </span><span style="color:#d08770;">true</span><span>,
+</span><span>		connectionButtonBg: &#39;</span><span style="color:#a3be8c;">bg-blue-700 hover:bg-blue-800</span><span>&#39;,
+</span><span>		connectionButtonLabel: &#39;</span><span style="color:#a3be8c;">Waiting</span><span>&#39;,
+</span><span>		messageFieldPlaceholder: &#39;</span><span style="color:#a3be8c;">Waiting for someone to show up...</span><span>&#39;
+</span><span>	};
+</span><span>
+</span><span>	</span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">chatHistory</span><span>: { type: &#39;</span><span style="color:#a3be8c;">received</span><span>&#39; | &#39;</span><span style="color:#a3be8c;">sent</span><span>&#39;; text: </span><span style="color:#bf616a;">string </span><span>}[] = </span><span style="color:#bf616a;">$state</span><span>([]);
+</span><span>	</span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">connectionProps</span><span>: </span><span style="color:#bf616a;">ConnectionProps </span><span>= </span><span style="color:#bf616a;">$state</span><span>(</span><span style="color:#bf616a;">connect</span><span>);
+</span><span>	</span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">messageFieldValue </span><span>= </span><span style="color:#bf616a;">$state</span><span>(&#39;&#39;);
+</span><span>	</span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">ws</span><span>: </span><span style="color:#bf616a;">WebSocket </span><span>| </span><span style="color:#d08770;">undefined </span><span>= </span><span style="color:#d08770;">undefined</span><span>;
+</span><span>
+</span><span>	</span><span style="color:#b48ead;">const </span><span style="color:#bf616a;">connection </span><span>= () </span><span style="color:#b48ead;">=&gt; </span><span>{
+</span><span>		</span><span style="color:#b48ead;">if </span><span>(</span><span style="color:#bf616a;">ws </span><span>=== </span><span style="color:#d08770;">undefined</span><span>) {
+</span><span>			</span><span style="color:#bf616a;">ws </span><span>= new </span><span style="color:#bf616a;">WebSocket</span><span>(&#39;</span><span style="color:#a3be8c;">wss://localhost:9000/chat</span><span>&#39;);
+</span><span>			</span><span style="color:#bf616a;">ws</span><span>.</span><span style="color:#bf616a;">addEventListener</span><span>(&#39;</span><span style="color:#a3be8c;">close</span><span>&#39;, () </span><span style="color:#b48ead;">=&gt; </span><span>{
+</span><span>				</span><span style="color:#bf616a;">connectionProps </span><span>= </span><span style="color:#bf616a;">connect</span><span>;
+</span><span>				</span><span style="color:#bf616a;">ws </span><span>= </span><span style="color:#d08770;">undefined</span><span>;
+</span><span>			});
+</span><span>			</span><span style="color:#bf616a;">ws</span><span>.</span><span style="color:#bf616a;">addEventListener</span><span>(&#39;</span><span style="color:#a3be8c;">message</span><span>&#39;, (event) </span><span style="color:#b48ead;">=&gt; </span><span>{
+</span><span>				</span><span style="color:#b48ead;">if </span><span>(</span><span style="color:#bf616a;">event</span><span>.data == &#39;</span><span style="color:#a3be8c;">OK</span><span>&#39;) {
+</span><span>					</span><span style="color:#bf616a;">connectionProps </span><span>= </span><span style="color:#bf616a;">disconect</span><span>;
+</span><span>					</span><span style="color:#b48ead;">return</span><span>;
+</span><span>				}
+</span><span>				</span><span style="color:#bf616a;">chatHistory</span><span>.</span><span style="color:#bf616a;">push</span><span>({ type: &#39;</span><span style="color:#a3be8c;">received</span><span>&#39;, text: </span><span style="color:#bf616a;">event</span><span>.data });
+</span><span>			});
+</span><span>			</span><span style="color:#bf616a;">ws</span><span>.</span><span style="color:#bf616a;">addEventListener</span><span>(&#39;</span><span style="color:#a3be8c;">open</span><span>&#39;, () </span><span style="color:#b48ead;">=&gt; </span><span>{
+</span><span>				</span><span style="color:#bf616a;">connectionProps </span><span>= </span><span style="color:#bf616a;">waiting</span><span>;
+</span><span>			});
+</span><span>		} </span><span style="color:#b48ead;">else </span><span>{
+</span><span>			</span><span style="color:#bf616a;">ws</span><span>.</span><span style="color:#bf616a;">close</span><span>();
+</span><span>			</span><span style="color:#bf616a;">connectionProps </span><span>= </span><span style="color:#bf616a;">connect</span><span>;
+</span><span>		}
+</span><span>	};
+</span><span>
+</span><span>	</span><span style="color:#b48ead;">const </span><span style="color:#bf616a;">send </span><span>= () </span><span style="color:#b48ead;">=&gt; </span><span>{
+</span><span>		</span><span style="color:#b48ead;">if </span><span>(</span><span style="color:#bf616a;">ws </span><span>=== </span><span style="color:#d08770;">undefined </span><span>|| </span><span style="color:#bf616a;">messageFieldValue </span><span>=== &#39;&#39;) {
+</span><span>			</span><span style="color:#b48ead;">return</span><span>;
+</span><span>		}
+</span><span>		</span><span style="color:#bf616a;">ws</span><span>.</span><span style="color:#bf616a;">send</span><span>(</span><span style="color:#bf616a;">messageFieldValue</span><span>);
+</span><span>		</span><span style="color:#bf616a;">chatHistory</span><span>.</span><span style="color:#bf616a;">push</span><span>({ type: &#39;</span><span style="color:#a3be8c;">sent</span><span>&#39;, text: </span><span style="color:#bf616a;">messageFieldValue </span><span>});
+</span><span>		</span><span style="color:#bf616a;">messageFieldValue </span><span>= &#39;&#39;;
+</span><span>	};
+</span><span>&lt;/</span><span style="color:#bf616a;">script</span><span>&gt;
+</span></code></pre>
+<p>Just a quick review, the WebSocket connection is initialized when the user clicks in the "Connect" button. The button's appearance changes as the connection state evolves. Messages are sent and received via WebSocket and displayed in the chat box using Svelte's reactivity. When the WebSocket connection closes, the UI reverts to its default state.</p>
+<p>And that is it on the front-end side. Type <code>deno run dev</code> to see a preview without backend interactions.</p>
+<h2 id="backend">Backend</h2>
+<p>Let's start creating the <code>Cargo.toml</code> definitions in the <code>backend</code> directory.</p>
+<pre data-lang="toml" style="background-color:#2b303b;color:#c0c5ce;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[dependencies]
+</span><span style="color:#bf616a;">tokio </span><span>= { </span><span style="color:#bf616a;">default-features </span><span>= </span><span style="color:#d08770;">false</span><span>, </span><span style="color:#bf616a;">features </span><span>= [&quot;</span><span style="color:#a3be8c;">macros</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">rt-multi-thread</span><span>&quot;], </span><span style="color:#bf616a;">version </span><span>= &quot;</span><span style="color:#a3be8c;">1.0</span><span>&quot; }
+</span><span style="color:#bf616a;">tokio-rustls </span><span>= { </span><span style="color:#bf616a;">default-features </span><span>= </span><span style="color:#d08770;">false</span><span>, </span><span style="color:#bf616a;">features </span><span>= [&quot;</span><span style="color:#a3be8c;">ring</span><span>&quot;], </span><span style="color:#bf616a;">version </span><span>= &quot;</span><span style="color:#a3be8c;">0.26</span><span>&quot; }
+</span><span style="color:#bf616a;">wtx </span><span>= { </span><span style="color:#bf616a;">default-features </span><span>= </span><span style="color:#d08770;">false</span><span>, </span><span style="color:#bf616a;">features </span><span>= [&quot;</span><span style="color:#a3be8c;">http-server-framework</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">nightly</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">tokio</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">tokio-rustls</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">web-socket</span><span>&quot;], </span><span style="color:#bf616a;">version </span><span>= &quot;</span><span style="color:#a3be8c;">0.24</span><span>&quot; }
+</span><span>
+</span><span>[package]
+</span><span style="color:#bf616a;">edition </span><span>= &quot;</span><span style="color:#a3be8c;">2021</span><span>&quot;
+</span><span style="color:#bf616a;">name </span><span>= &quot;</span><span style="color:#a3be8c;">backend</span><span>&quot;
+</span><span style="color:#bf616a;">version </span><span>= &quot;</span><span style="color:#a3be8c;">0.1.0</span><span>&quot;
+</span></code></pre>
+<p><a href="https://github.com/c410-f3r/wtx">WTX</a> does not include any features by default so we have to specify the desirable functionality.</p>
+<ul>
+<li><code>http-server-framework</code>: A high-level HTTP server that offers CORS, routing, streams and sessions.</li>
+<li><code>nightly</code>: Necessary because of the <a href="https://github.com/rust-lang/rust/issues/109417"><code>RTN</code></a> feature.</li>
+<li><code>tokio</code>: A fast runtime. It is also possible to specify other executors.</li>
+<li><code>tokio-rustls</code>: Ensures encrypted connections using <code>Rustls</code></li>
+<li><code>web-socket</code>: Full-duplex communication protocol.</li>
+</ul>
+<p>The connection between the client and the backend is encrypted, as such, it is necessary to use certificates.</p>
+<p>Production apps use certificates issued by official CA entities like <code>Let's Encrypt</code> but since we are in a testing environment, self-made elements are OK. Just don't forget to add the root CA in the browser's store when testing.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">CERTS_DIR</span><span>=&quot;</span><span style="color:#a3be8c;">/some/directory/of/your/choice</span><span>&quot;
+</span><span style="color:#bf616a;">openssl</span><span> req</span><span style="color:#bf616a;"> -newkey</span><span> rsa:2048</span><span style="color:#bf616a;"> -nodes -subj </span><span>&quot;</span><span style="color:#a3be8c;">/C=FI/CN=vahid</span><span>&quot;</span><span style="color:#bf616a;"> -keyout </span><span>$</span><span style="color:#bf616a;">CERTS_DIR</span><span>/key.pem</span><span style="color:#bf616a;"> -out </span><span>$</span><span style="color:#bf616a;">CERTS_DIR</span><span>/key.csr
+</span><span style="color:#bf616a;">openssl</span><span> x509</span><span style="color:#bf616a;"> -signkey </span><span>$</span><span style="color:#bf616a;">CERTS_DIR</span><span>/key.pem</span><span style="color:#bf616a;"> -in </span><span>$</span><span style="color:#bf616a;">CERTS_DIR</span><span>/key.csr</span><span style="color:#bf616a;"> -req -days</span><span> 365</span><span style="color:#bf616a;"> -out </span><span>$</span><span style="color:#bf616a;">CERTS_DIR</span><span>/cert.pem
+</span><span style="color:#bf616a;">openssl</span><span> req</span><span style="color:#bf616a;"> -x509 -sha256 -nodes -subj </span><span>&quot;</span><span style="color:#a3be8c;">/C=FI/CN=vahid</span><span>&quot;</span><span style="color:#bf616a;"> -days</span><span> 365</span><span style="color:#bf616a;"> -newkey</span><span> rsa:2048</span><span style="color:#bf616a;"> -keyout </span><span>$</span><span style="color:#bf616a;">CERTS_DIR</span><span>/root-ca.key</span><span style="color:#bf616a;"> -out </span><span>$</span><span style="color:#bf616a;">CERTS_DIR</span><span>/root-ca.crt
+</span><span style="color:#bf616a;">cat </span><span>&lt;&lt;&#39;</span><span style="color:#b48ead;">EOF</span><span>&#39; &gt;&gt; $</span><span style="color:#bf616a;">CERTS_DIR</span><span>/localhost.ext
+</span><span style="color:#a3be8c;">authorityKeyIdentifier=keyid,issuer
+</span><span style="color:#a3be8c;">basicConstraints=CA:FALSE
+</span><span style="color:#a3be8c;">subjectAltName = @alt_names
+</span><span style="color:#a3be8c;">[alt_names]
+</span><span style="color:#a3be8c;">DNS.1 = localhost
+</span><span style="color:#a3be8c;">IP.1 = 127.0.0.1
+</span><span style="color:#b48ead;">EOF
+</span><span style="color:#bf616a;">openssl</span><span> x509</span><span style="color:#bf616a;"> -req -CA </span><span>$</span><span style="color:#bf616a;">CERTS_DIR</span><span>/root-ca.crt</span><span style="color:#bf616a;"> -CAkey </span><span>$</span><span style="color:#bf616a;">CERTS_DIR</span><span>/root-ca.key</span><span style="color:#bf616a;"> -in </span><span>$</span><span style="color:#bf616a;">CERTS_DIR</span><span>/key.csr</span><span style="color:#bf616a;"> -out </span><span>$</span><span style="color:#bf616a;">CERTS_DIR</span><span>/cert.pem</span><span style="color:#bf616a;"> -days</span><span> 365</span><span style="color:#bf616a;"> -CAcreateserial -extfile </span><span>$</span><span style="color:#bf616a;">CERTS_DIR</span><span>/localhost.ext
+</span><span style="color:#bf616a;">rm </span><span>$</span><span style="color:#bf616a;">CERTS_DIR</span><span>/key.csr
+</span><span style="color:#bf616a;">rm </span><span>$</span><span style="color:#bf616a;">CERTS_DIR</span><span>/localhost.ext
+</span><span style="color:#bf616a;">rm </span><span>$</span><span style="color:#bf616a;">CERTS_DIR</span><span>/root-ca.srl
+</span></code></pre>
+<p>The server is made of a single <code>/chat</code> endpoint, an enabled <code>enable_connect_protocol</code> flag, a RNG, the newly created certificates and a maximum header size of 128KiB. More endpoints can be added and more parameters can be modified but the code is purposely small to not further complicate things.</p>
+<p><code>UserPool</code> is a lazily evaluated static structure synchronized by a mutex responsible for matching initial clients as well as delivering messages of already established chats.</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">static </span><span style="color:#d08770;">CERT</span><span>: &amp;[</span><span style="color:#b48ead;">u8</span><span>] = include_bytes!(&quot;</span><span style="color:#a3be8c;">/some/directory/of/your/choice/cert.pem</span><span>&quot;);
+</span><span style="color:#b48ead;">static </span><span style="color:#d08770;">KEY</span><span>: &amp;[</span><span style="color:#b48ead;">u8</span><span>] = include_bytes!(&quot;</span><span style="color:#a3be8c;">/some/directory/of/your/choice/key.pem</span><span>&quot;);
+</span><span style="color:#b48ead;">static </span><span style="color:#d08770;">USER_POOL</span><span>: LazyLock&lt;Mutex&lt;UserPool&gt;&gt; = LazyLock::new(|| {
+</span><span>  Mutex::const_new(UserPool { matching: Deque::new(), messages: HashMap::new() })
+</span><span>});
+</span><span>
+</span><span>#[</span><span style="color:#bf616a;">tokio</span><span>::</span><span style="color:#bf616a;">main</span><span>]
+</span><span>async </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">main</span><span>() -&gt; wtx::Result&lt;()&gt; {
+</span><span>  </span><span style="color:#b48ead;">let</span><span> router = Router::paths(wtx::paths!((&quot;</span><span style="color:#a3be8c;">/chat</span><span>&quot;, </span><span style="color:#96b5b4;">web_socket</span><span>(chat)),))?;
+</span><span>  ServerFrameworkBuilder::new(router)
+</span><span>    .</span><span style="color:#96b5b4;">enable_connect_protocol</span><span>(</span><span style="color:#d08770;">true</span><span>)
+</span><span>    .</span><span style="color:#96b5b4;">max_hpack_len</span><span>((</span><span style="color:#d08770;">128 </span><span>* </span><span style="color:#d08770;">1024</span><span>, </span><span style="color:#d08770;">128 </span><span>* </span><span style="color:#d08770;">1024</span><span>))
+</span><span>    .</span><span style="color:#96b5b4;">without_aux</span><span>()
+</span><span>    .</span><span style="color:#96b5b4;">tokio_rustls</span><span>(
+</span><span>      (</span><span style="color:#d08770;">CERT</span><span>, </span><span style="color:#d08770;">KEY</span><span>),
+</span><span>      &quot;</span><span style="color:#a3be8c;">0.0.0.0:9000</span><span>&quot;,
+</span><span>      Xorshift64::from(</span><span style="color:#96b5b4;">simple_seed</span><span>()),
+</span><span>      |</span><span style="color:#bf616a;">error</span><span>| eprintln!(&quot;</span><span style="color:#d08770;">{error:?}</span><span>&quot;),
+</span><span>      |_| Ok(()),
+</span><span>    )
+</span><span>    .await
+</span><span>}
+</span><span>
+</span><span>#[</span><span style="color:#bf616a;">derive</span><span>(Debug)]
+</span><span style="color:#b48ead;">struct </span><span>UserPool {
+</span><span>  </span><span style="color:#bf616a;">matching</span><span>: Deque&lt;(</span><span style="color:#b48ead;">u128</span><span>, Waker)&gt;,
+</span><span>  </span><span style="color:#bf616a;">messages</span><span>: HashMap&lt;</span><span style="color:#b48ead;">u128</span><span>, (</span><span style="color:#b48ead;">u128</span><span>, String, Waker)&gt;,
+</span><span>}
+</span><span>
+</span><span>async </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">chat</span><span>(</span><span style="color:#bf616a;">manual_stream</span><span>: ManualStream&lt;(), ServerStream, ()&gt;) -&gt; wtx::Result&lt;()&gt; {
+</span><span>  </span><span style="color:#b48ead;">let</span><span> wos = WebSocketOverStream::new(
+</span><span>    &amp;Headers::new(),
+</span><span>    </span><span style="color:#d08770;">false</span><span>,
+</span><span>    Xorshift64::from(</span><span style="color:#96b5b4;">simple_seed</span><span>()),
+</span><span>    manual_stream.stream,
+</span><span>  )
+</span><span>  .await?;
+</span><span>  ws::exchange_messages(wos).await?;
+</span><span>  Ok(())
+</span><span>}
+</span></code></pre>
+<p>When <code>Client 1</code> connects, a new <code>matching</code> entry is added at the end of the queue and the task enters into a idle state. When <code>Client 2</code> connects, the previous <code>matching</code> entry is removed and a new chat is established through the insertion of each client ID into the <code>messages</code> collection. A new chat also triggers the awakening of the matching client (<code>Client 1</code>) finally returning the remote ID.</p>
+<p>Remember when you heard that <code>Futures</code> are implemented as state machines? In our system the task is repeatedly called in different semantic situations until it returns <code>Poll::Ready</code>.</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span>async </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">handshake</span><span>(
+</span><span>  </span><span style="color:#bf616a;">local_id</span><span>: </span><span style="color:#b48ead;">u128</span><span>,
+</span><span>  </span><span style="color:#bf616a;">wos</span><span>: &amp;</span><span style="color:#b48ead;">mut </span><span>WebSocketOverStream&lt;ServerStream&gt;,
+</span><span>) -&gt; wtx::Result&lt;</span><span style="color:#b48ead;">u128</span><span>&gt; {
+</span><span>  </span><span style="color:#b48ead;">let mut</span><span> user_pin = pin!(</span><span style="color:#d08770;">USER_POOL</span><span>.</span><span style="color:#96b5b4;">lock</span><span>());
+</span><span>  </span><span style="color:#b48ead;">let</span><span> remote_id = </span><span style="color:#96b5b4;">poll_fn</span><span>(|</span><span style="color:#bf616a;">cx</span><span>| {
+</span><span>    </span><span style="color:#b48ead;">let mut</span><span> user_guard = ready!(user_pin.</span><span style="color:#96b5b4;">as_mut</span><span>().</span><span style="color:#96b5b4;">poll</span><span>(cx));
+</span><span>    user_pin.</span><span style="color:#96b5b4;">set</span><span>(</span><span style="color:#d08770;">USER_POOL</span><span>.</span><span style="color:#96b5b4;">lock</span><span>());
+</span><span>    </span><span style="color:#b48ead;">if let </span><span>Some((remote_id, _, _)) = user_guard.messages.</span><span style="color:#96b5b4;">get</span><span>(&amp;local_id) {
+</span><span>      </span><span style="color:#b48ead;">return </span><span>Poll::Ready(Ok(*remote_id));
+</span><span>    }
+</span><span>    </span><span style="color:#b48ead;">if let </span><span>Some((remote_id, remote_waker)) = user_guard.matching.</span><span style="color:#96b5b4;">pop_front</span><span>() {
+</span><span>      </span><span style="color:#96b5b4;">drop</span><span>(user_guard.messages.</span><span style="color:#96b5b4;">insert</span><span>(local_id, (remote_id, String::new(), </span><span style="color:#d08770;">NOOP_WAKER</span><span>.</span><span style="color:#96b5b4;">clone</span><span>())));
+</span><span>      </span><span style="color:#96b5b4;">drop</span><span>(user_guard.messages.</span><span style="color:#96b5b4;">insert</span><span>(remote_id, (local_id, String::new(), </span><span style="color:#d08770;">NOOP_WAKER</span><span>.</span><span style="color:#96b5b4;">clone</span><span>())));
+</span><span>      remote_waker.</span><span style="color:#96b5b4;">wake</span><span>();
+</span><span>      Poll::Ready(wtx::Result::Ok(remote_id))
+</span><span>    } </span><span style="color:#b48ead;">else </span><span>{
+</span><span>      user_guard.matching.</span><span style="color:#96b5b4;">push_back</span><span>((local_id, cx.</span><span style="color:#96b5b4;">waker</span><span>().</span><span style="color:#96b5b4;">clone</span><span>()))?;
+</span><span>      Poll::Pending
+</span><span>    }
+</span><span>  })
+</span><span>  .await?;
+</span><span>  wos.</span><span style="color:#96b5b4;">write_frame</span><span>(&amp;</span><span style="color:#b48ead;">mut </span><span>Frame::new_fin(OpCode::Text, *</span><span style="color:#b48ead;">b</span><span>&quot;</span><span style="color:#a3be8c;">OK</span><span>&quot;)).await?;
+</span><span>  Ok(remote_id)
+</span><span>}
+</span></code></pre>
+<p>After the initial handshake we have two futures racing for completion in a loop, one is receiving messages from the local client and the other is receiving messages from the remote client. Messages received from the remote client via <code>USER_POOL</code> are sent to the local client as WebSocket DATA frames and messages received from the local client are stored in the <code>USER_POOL</code> structure. The associated <code>USER_POOL</code> future is awakened, closing the circle.</p>
+<p>As far as I can tell these futures have cancellation safety. If that is not the case, feel free to contact me for possible adjustments.</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span>async </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">connection</span><span>(
+</span><span>  (</span><span style="color:#bf616a;">local_id</span><span>, </span><span style="color:#bf616a;">remote_id</span><span>): (</span><span style="color:#b48ead;">u128</span><span>, </span><span style="color:#b48ead;">u128</span><span>),
+</span><span>  </span><span style="color:#bf616a;">wos</span><span>: &amp;</span><span style="color:#b48ead;">mut </span><span>WebSocketOverStream&lt;ServerStream&gt;,
+</span><span>) -&gt; wtx::Result&lt;()&gt; {
+</span><span>  </span><span style="color:#b48ead;">let mut</span><span> buffer = Vector::new();
+</span><span>  </span><span style="color:#b48ead;">loop </span><span>{
+</span><span>    buffer.</span><span style="color:#96b5b4;">clear</span><span>();
+</span><span>    </span><span style="color:#b48ead;">let mut</span><span> user_pin = pin!(</span><span style="color:#d08770;">USER_POOL</span><span>.</span><span style="color:#96b5b4;">lock</span><span>());
+</span><span>    </span><span style="color:#b48ead;">let</span><span> message_fut = </span><span style="color:#96b5b4;">poll_fn</span><span>(|</span><span style="color:#bf616a;">cx</span><span>| {
+</span><span>      </span><span style="color:#b48ead;">let mut</span><span> user_guard = ready!(user_pin.</span><span style="color:#96b5b4;">as_mut</span><span>().</span><span style="color:#96b5b4;">poll</span><span>(cx));
+</span><span>      user_pin.</span><span style="color:#96b5b4;">set</span><span>(</span><span style="color:#d08770;">USER_POOL</span><span>.</span><span style="color:#96b5b4;">lock</span><span>());
+</span><span>      </span><span style="color:#b48ead;">let </span><span>Some((_, message, waker)) = user_guard.messages.</span><span style="color:#96b5b4;">get_mut</span><span>(&amp;local_id) </span><span style="color:#b48ead;">else </span><span>{
+</span><span>        </span><span style="color:#b48ead;">return </span><span>Poll::Ready(Err(wtx::Error::ClosedConnection));
+</span><span>      };
+</span><span>      </span><span style="color:#b48ead;">if</span><span> message.</span><span style="color:#96b5b4;">is_empty</span><span>() {
+</span><span>        waker.</span><span style="color:#96b5b4;">clone_from</span><span>(cx.</span><span style="color:#96b5b4;">waker</span><span>());
+</span><span>        </span><span style="color:#b48ead;">return </span><span>Poll::Pending;
+</span><span>      }
+</span><span>      Poll::Ready(wtx::Result::Ok(mem::take(message)))
+</span><span>    });
+</span><span>    tokio::select! {
+</span><span>      frame_rslt = wos.</span><span style="color:#96b5b4;">read_frame</span><span>(&amp;</span><span style="color:#b48ead;">mut</span><span> buffer) =&gt; {
+</span><span>        </span><span style="color:#b48ead;">let</span><span> frame = frame_rslt?;
+</span><span>        </span><span style="color:#b48ead;">match</span><span> frame.</span><span style="color:#96b5b4;">op_code</span><span>() {
+</span><span>          OpCode::Text =&gt; {
+</span><span>            </span><span style="color:#b48ead;">let </span><span>Some(text) = frame.</span><span style="color:#96b5b4;">text_payload</span><span>() </span><span style="color:#b48ead;">else </span><span>{
+</span><span>              </span><span style="color:#b48ead;">return </span><span>Err(wtx::web_socket::WebSocketError::UnexpectedFrame.</span><span style="color:#96b5b4;">into</span><span>());
+</span><span>            };
+</span><span>            </span><span style="color:#b48ead;">let mut</span><span> user_guard = </span><span style="color:#d08770;">USER_POOL</span><span>.</span><span style="color:#96b5b4;">lock</span><span>().await;
+</span><span>            </span><span style="color:#b48ead;">let </span><span>Some((_, message, waker)) = user_guard.messages.</span><span style="color:#96b5b4;">get_mut</span><span>(&amp;remote_id) </span><span style="color:#b48ead;">else </span><span>{
+</span><span>              </span><span style="color:#b48ead;">return </span><span>Err(wtx::Error::ClosedConnection);
+</span><span>            };
+</span><span>            message.</span><span style="color:#96b5b4;">push_str</span><span>(text);
+</span><span>            waker.</span><span style="color:#96b5b4;">wake_by_ref</span><span>();
+</span><span>          }
+</span><span>          OpCode::Close =&gt; </span><span style="color:#b48ead;">break</span><span>,
+</span><span>          _ =&gt; {}
+</span><span>        }
+</span><span>      }
+</span><span>      message_rslt = message_fut =&gt; {
+</span><span>        wos.</span><span style="color:#96b5b4;">write_frame</span><span>(&amp;</span><span style="color:#b48ead;">mut </span><span>Frame::new_fin(OpCode::Text, message_rslt?.</span><span style="color:#96b5b4;">into_bytes</span><span>())).await?;
+</span><span>      }
+</span><span>    }
+</span><span>  }
+</span><span>  Ok(())
+</span><span>}
+</span></code></pre>
+<p><code>exchange_messages</code> is the final function that glues <code>handshake</code> and <code>connection</code>. A dropped connection by any party automatically removes any chat reference in the <code>messages</code> map.</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">pub</span><span>(</span><span style="color:#b48ead;">crate</span><span>) async </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">exchange_messages</span><span>(
+</span><span>  </span><span style="color:#b48ead;">mut </span><span style="color:#bf616a;">wos</span><span>: WebSocketOverStream&lt;ServerStream&gt;,
+</span><span>) -&gt; wtx::Result&lt;()&gt; {
+</span><span>  </span><span style="color:#b48ead;">let</span><span> local_id = GenericTime::timestamp()?.</span><span style="color:#96b5b4;">as_nanos</span><span>();
+</span><span>  </span><span style="color:#b48ead;">let</span><span> remote_id = </span><span style="color:#96b5b4;">handshake</span><span>(local_id, &amp;</span><span style="color:#b48ead;">mut</span><span> wos).await?;
+</span><span>  </span><span style="color:#b48ead;">let</span><span> rslt = </span><span style="color:#96b5b4;">connection</span><span>((local_id, remote_id), &amp;</span><span style="color:#b48ead;">mut</span><span> wos).await;
+</span><span>  wos.</span><span style="color:#96b5b4;">close</span><span>().await?;
+</span><span>  </span><span style="color:#b48ead;">let mut</span><span> user_guard = </span><span style="color:#d08770;">USER_POOL</span><span>.</span><span style="color:#96b5b4;">lock</span><span>().await;
+</span><span>  </span><span style="color:#96b5b4;">drop</span><span>(user_guard.messages.</span><span style="color:#96b5b4;">remove</span><span>(&amp;local_id));
+</span><span>  </span><span style="color:#b48ead;">if let </span><span>Some((_, _, waker)) = user_guard.messages.</span><span style="color:#96b5b4;">remove</span><span>(&amp;remote_id) {
+</span><span>    waker.</span><span style="color:#96b5b4;">wake</span><span>();
+</span><span>  }
+</span><span>  </span><span style="color:#96b5b4;">drop</span><span>(user_guard);
+</span><span>  rslt
+</span><span>}
+</span></code></pre>
+<p>It is time to visualize the final application. Type <code>cargo run</code> in the backend folder, open another terminal and type <code>deno run dev</code> in the frontend directory. If everything works well, you should be able to create fake interactions using two browser windows like in the attached video of this post.</p>
+<h2 id="final-words">Final words</h2>
+<figure class="image">
+  <img src="/thoughts/building-a-real-time-chat-using-web-sockets-over-http2-streams/example.png" alt="Handshake">
+</figure>
+<p>While we have built a chat application, WebSocket over HTTP/2 streams is useful for many other scenarios when users are interacting with web browsers. For example, live stock prices, team document editing or video streaming.</p>
+<p>Hopefully the steps described here gave you one or two hints about the directions that need to be taken to create real-time communications. Feel free to modify or expand the code to meet your expectations.</p>
+<p>On an additional note, <a href="https://github.com/c410-f3r/wtx">WTX</a> has built-in support for cookie sessions if you are looking to add an authentication wall.</p>
+
+        </div>
+    </section>
+</article>
+
+
+            </main>
+
+            <footer>
+                <div class="columns is-vcentered">
+                    <div class="column is-8">
+                        Made with <a alt="Bulma" href="https://bulma.io/" target="_blank"><strong>Bulma</strong></a>
+                        and
+                        <a alt="Zola" href="https://www.getzola.org" target="_blank"><strong>Zola</strong></a>.
+                    </div>
+                    <div class="column">
+                        <div>
+                            <a href="https://github.com/c410-f3r" target="_blank" title="GitHub account">
+                                <span class="icon-text">
+                                    <span class="icon">
+                                        <img alt="Github" src="/fontawesome/github.svg">
+                                    </span>
+                                    <span>c410-f3r</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://c410-f3r.github.io/index.js"></script>
+</body>
+
+</html>
