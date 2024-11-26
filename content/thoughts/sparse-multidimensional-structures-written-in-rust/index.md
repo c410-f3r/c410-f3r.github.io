@@ -21,7 +21,7 @@ In this post, I am going to talk about [ndsparse], a batteries-included library 
 
 <h4 class="is-4 title">For the hopeful</h4>
 
-Before anything else, [ndsparse] isn't a multidimensional sparse algebra/arithmetic library (disappointment face) because of its self-contained responsibility and complexity. Futhermore, a really good implementation of such library would require a titanic amount of research, work and free time that I don't have.
+Before anything else, [ndsparse] isn't a multidimensional sparse algebra/arithmetic library (disappointment face) because of its self-contained responsibility and complexity. Furthermore, a really good implementation of such a library would require a titanic amount of research, work and free time that I don't have.
 
 This intended limitation restricts the usage of this project by a lot but it is still useful for store, transform and retrieve use-cases. One can also be a hero and use some of the supported structures as a building foundation for higher level libraries.
 
@@ -29,7 +29,7 @@ Checkout [sprs] for an awesome "rustic" sparse linear algebra library.
 
 <h4 class="is-4 title">Supported formats</h4>
 
-There are a bunch of different 2D sparse structures that determinate the space-usage and the asymptotic limit of a given operation, some are generic and others are more problem specific. E.g.: BSR, COO, CSC, CSR, DIA, DOK, ELL, JDS and LIL.
+There are a bunch of different 2D sparse structures that determine the space-usage and the asymptotic limit of a given operation, some are generic and others are more problem specific. E.g.: BSR, COO, CSC, CSR, DIA, DOK, ELL, JDS and LIL.
 
 Two (or three, depending on your POV) widely known formats were picked for adaptation, namely, COO and CSC/CSR.
 
@@ -90,13 +90,13 @@ let _coo_array_5 = CooArray::new(
 );
 ```
 
-You might be wondering what are these `Array` and `into()` things. Well, we will get there in a minute.
+You might be wondering what these `Array` and `into()` things are. Well, we will get there in a minute.
 
 <h6 class="is-6 subtitle">CSL (Compressed Sparse Line)</h6>
 
 A generalization of the Compressed Sparse Column (CSC) and Compressed Sparse Row (CSR) formats for N-dimensions. Since all data is compressed line-by-line, this nomenclature came naturally.
 
-Basically, three indexed storage are needed, one for the data itself, one for the line index of each data and one to indicate the number of non-zero elements of each line. Here, each line can also be interpreted as the innermost dimension or the right most dimension.
+Basically, three indexed storage are needed, one for the data itself, one for the line index of each data and one to indicate the number of non-zero elements of each line. Here, each line can also be interpreted as the innermost dimension or the rightmost dimension.
 
 ```rust
 use ndsparse::csl::CslArray;
@@ -200,7 +200,7 @@ COO is more straightforward. For example, one can use `some_coo.data().par_iter(
 
 Slicing isn't great for CSL, COO should receive more love, there isn't any agnostic transformation like `resize` or `transpose` and more formats could be added. All of these TODO's might be added at some point in the future with enough free time and willingness.
 
-Last but not the least, I *think* that I invented a new sparse structured that is space-efficient and enables a fine-grained control over sparsity. More on this in a later post.
+Last but not the least, I *think* that I invented a new sparse structure that is space-efficient and enables a fine-grained control over sparsity. More on this in a later post.
 
 [arrayvec]: https://github.com/bluss/arrayvec
 [CslLineConstructor]: https://docs.rs/ndsparse/0.2.1/ndsparse/csl/struct.CslLineConstructor.html

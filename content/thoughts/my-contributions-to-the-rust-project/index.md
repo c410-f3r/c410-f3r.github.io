@@ -23,7 +23,7 @@ Without further ado, let's list all my major contributions in chronological orde
 
 <h4 class="is-4 subtitle">1. Attributes in formal function parameter position</h4>
 
-More-or-less like a introduction to the internals of the project, [https://github.com/rust-lang/rust/issues/60406] wasn't very difficult to implement because all necessary pieces were already available for utilization.
+More-or-less like an introduction to the internals of the project, [https://github.com/rust-lang/rust/issues/60406] wasn't very difficult to implement because all necessary pieces were already available for utilization.
 
 ```rust
 // Snippet extracted from the Juniper project
@@ -44,7 +44,7 @@ impl Person {
 Unfortunately [https://github.com/rust-lang/rust/pull/75644] took one year to be reviewed but at least one subset was stabilized on version 1.63.
 
 ```rust
-// Snipper extracted from the Arbitrary project
+// Snippet extracted from the Arbitrary project
 
 fn size_hint(d: usize) -> (usize, Option<usize>) {
   crate::size_hint::and_all(&array::from_fn::<_, N, _>(|_| {
@@ -58,7 +58,7 @@ fn size_hint(d: usize) -> (usize, Option<usize>) {
 The toughest contribution, no doubt about that. [https://github.com/rust-lang/rust/pull/88642] was very challenging both technically and mentally.
 
 ```rust
-// Snipper extracted from the Clippy project
+// Snippet extracted from the Clippy project
 
 if let FormatArgsPiece::Placeholder(placeholder) = piece
   && let Ok(index) = placeholder.argument.index
@@ -75,7 +75,7 @@ Hopefully the remaining concerns involving dropping order will be resolved in th
 [https://github.com/rust-lang/rust/issues/83527] is really useful and allows operations that are currently impossible on stable. Despite my attempts, some questions were raised and they need to be addressed before stabilization.
 
 ```rust
-// Snipper extracted from the Rust project
+// Snippet extracted from the Rust project
 
 impl<$($T: PartialEq),+> PartialEq for ($($T,)+)
 where
@@ -115,7 +115,7 @@ fn main() {
 
 <h4 class="is-4 subtitle">Final words</h4>
 
-With this brief summary and other non-listed PRs, I think I made a small but positive impact on the ecosystem. Thank you very much for all the reviewers and mentors that helped me along the way with special mentions to [petrochenkov], [Centril] and [matthewjasper].
+With this brief summary and other non-listed PRs, I think I made a small but positive impact on the ecosystem. Thank you very much to all the reviewers and mentors that helped me along the way with special mentions to [petrochenkov], [Centril] and [matthewjasper].
 
 [https://github.com/rust-lang/rust/issues/60406#issuecomment-488306461]: https://github.com/rust-lang/rust/issues/60406#issuecomment-488306461
 [https://github.com/rust-lang/rust/issues/60406]: https://github.com/rust-lang/rust/issues/60406
