@@ -34,36 +34,6 @@
 <body>
     <div class="container">
         <div class="rounded-box">
-            <header>
-                <nav class="is-size-5 navbar" role="navigation" aria-label="main navigation">
-                    <div class="navbar-brand">
-                        <a class="is-family-secondary is-paddingless is-size-4 has-text-weight-bold navbar-item" href="/" title = "Caio's stuff">Caio's Stuff</a>
-
-                        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                            data-target="topMenu">
-                            <span aria-hidden="true"></span>
-                            <span aria-hidden="true"></span>
-                            <span aria-hidden="true"></span>
-                        </a>
-                    </div>
-
-                    <div class="has-text-weight-light navbar-menu" id="topMenu">
-                        <div class="navbar-end">
-                            {% for item in config.extra.navbar %}
-                            <a class="navbar-item px-4 underline" href="{{ item.url }}" title="{{ item.name }}">
-                                <span class="icon">
-                                    <figure class="image is-16x16">
-                                        <img alt="{{ item.name }}" class="image is-16x16" src="{{ item.icon }}">
-                                    </figure>
-                                </span>
-                                <span>{{ item.name }}</span>
-                            </a>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </nav>
-            </header>
-
             <main>
                 {% block content %}
                 <h4 class="has-text-centered is-4 ribbon title">Thoughts</h4>

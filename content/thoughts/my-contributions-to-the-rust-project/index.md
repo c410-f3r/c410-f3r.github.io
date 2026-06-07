@@ -74,6 +74,8 @@ Hopefully the remaining concerns involving dropping order will be resolved in th
 
 [https://github.com/rust-lang/rust/issues/83527] is really useful and allows operations that are currently impossible on stable. Despite my attempts, some questions were raised and they need to be addressed before stabilization.
 
+This particular feature made me wonder that it is generally easy to point out concerns, regardless if they are relevant, but it isn't generally easy to suggest options that will make things move forward. Worse yet, consensus requires work from the associated participants and available work is usually scarce among volunteers. In the grand scheme such a scenario creates, perhaps, ossification.
+
 ```rust
 // Snippet extracted from the Rust project
 
@@ -92,7 +94,7 @@ where
 
 <h4 class="is-4 subtitle">5. Nicer assert messages</h4>
 
-[https://github.com/rust-lang/rust/issues/44838] depends on work on the constant evaluation front which unfortunately is not my specialty. Hope that I will be able to hack the missing pieces in the next months.
+[https://github.com/rust-lang/rust/issues/44838] depends on work on the constant evaluation front which unfortunately is not my specialty.
 
 ```rust
 fn fun(a: Option<i32>, b: Option<i32>, c: Option<i32>) {
@@ -111,6 +113,41 @@ fn main() {
 //   a = Some(1)
 //   b = None
 //   c = Some(2)
+```
+
+<h4 class="is-4 subtitle">6. cfg_select</h4>
+
+Inspired by the `cfg_if` dependency, [https://github.com/rust-lang/rust/issues/115585] is so useful that it is surprising no one created it before. Same thing for a std `Either` enum but that is another topic.
+
+```rust
+cfg_select! {
+    unix => {
+        fn foo() { /* unix specific functionality */ }
+    }
+    target_pointer_width = "32" => {
+        fn foo() { /* non-unix, 32-bit functionality */ }
+    }
+    _ => {
+        fn foo() { /* fallback implementation */ }
+    }
+}
+```
+
+<h4 class="is-4 subtitle">7. macro_metavar_expr_concat</h4>
+
+Similarly to `macro_metavar_expr`, [https://github.com/rust-lang/rust/issues/124225] also allows operations that are currently impossible on stable and it is much more powerful than the `concat_idents!` macro.
+
+```rust
+macro_rules! many_idents {
+    ($a:ident, $c:ident) => {
+        const ${concat($a, B, $c, D)}: i32 = 1;
+    };
+}
+
+fn main() {
+    many_idents!(A, C);
+    assert_eq!(ABCD, 1);
+}
 ```
 
 <h4 class="is-4 subtitle">Final words</h4>
