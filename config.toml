@@ -9,10 +9,7 @@ title = "Caio's Stuff"
 
 [extra]
 navbar = [
-    { icon = "/fontawesome/lightbulb.svg", url = "/certifications", name = "Certifications" },
-    { icon = "/fontawesome/school.svg", url = "/courses", name = "Courses" },
-    { icon = "/fontawesome/envelope.svg", url = "/cover-letter", name = "Cover letter" },
-    { icon = "/fontawesome/list.svg", url = "/curriculum.pdf", name = "Curriculum" },
+    { icon = "/fontawesome/list.svg", url = "/certifications", name = "Certifications" },
 ]
 
 [markdown.highlighting]
