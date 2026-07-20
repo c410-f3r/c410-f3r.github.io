@@ -1,6 +1,6 @@
 +++
 date = 2026-06-12
-description = "Evaluates the combination of three key agreements, five signing algorithms and three cipher suites."
+description = "Evaluates the combination of three key agreements, five signing algorithms and three cipher suites in different crypto projects."
 title = "TLS Handshakes: Measuring the Performance of 4 Cryptography Libraries"
 
 [taxonomies]
