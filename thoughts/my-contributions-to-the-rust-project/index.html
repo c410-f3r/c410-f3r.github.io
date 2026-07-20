@@ -1,0 +1,201 @@
+<!--
+    All icons belong to Font Awesome. Please, see https://fontawesome.com/license/free for 
+    more information.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <link href="https://c410-f3r.github.io/index.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Caio&#x27;s Stuff</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="rounded-box">
+            <header>
+                <nav class="is-size-5 navbar" role="navigation" aria-label="main navigation">
+                    <div class="navbar-brand">
+                        <a class="is-family-secondary is-paddingless is-size-4 has-text-weight-bold navbar-item" href="/" title = "Caio's stuff">Caio's Stuff</a>
+
+                        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                            data-target="topMenu">
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                        </a>
+                    </div>
+
+                    <div class="has-text-weight-light navbar-menu" id="topMenu">
+                        <div class="navbar-end">
+                            
+                            <a class="navbar-item px-4 underline" href="&#x2F;certifications" title="Certifications">
+                                <span class="icon">
+                                    <figure class="image is-16x16">
+                                        <img alt="Certifications" class="image is-16x16" src="&#x2F;fontawesome&#x2F;list.svg">
+                                    </figure>
+                                </span>
+                                <span>Certifications</span>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <main>
+                
+
+<h4 class="has-text-centered is-4 ribbon title">My contributions to the Rust project</h4>
+
+<div class="content">
+    <figure class="image">
+  <img src="/thoughts/my-contributions-to-the-rust-project/intro.jpg" alt="Introduction">
+  <figcaption>Photo by Roman Synkevych on Unsplash</figcaption>
+</figure>
+<p>All started with <a rel="external" href="https://github.com/rust-lang/rust/issues/60406#issuecomment-488306461">https://github.com/rust-lang/rust/issues/60406#issuecomment-488306461</a> around ~4 years ago and since then I didn't stop contributing to the Rust compiler as well as other related projects like Clippy in my free time.</p>
+<p>Besides the technical skills learned, the things that stood out the most were the concentration of knowledge in the hands of few busy individuals that eventually parted away and a noticeable amount of good contributors passing through sensible financial problems.</p>
+<p>Without further ado, let's list all my major contributions in chronological order.</p>
+<h4 class="is-4 subtitle">1. Attributes in formal function parameter position</h4>
+<p>More-or-less like an introduction to the internals of the project, <a rel="external" href="https://github.com/rust-lang/rust/issues/60406">https://github.com/rust-lang/rust/issues/60406</a> wasn't very difficult to implement because all necessary pieces were already available for utilization.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="rust"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;">// Snippet extracted from the Juniper project</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #F9E2AF;font-style: italic;">#</span><span style="color: #9399B2;">[</span><span style="color: #F9E2AF;font-style: italic;">graphql_object</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span style="color: #CBA6F7;">impl</span><span style="color: #F9E2AF;font-style: italic;"> Person</span><span style="color: #9399B2;"> {</span></span>
+<span class="giallo-l"><span style="color: #CBA6F7;">  fn</span><span style="color: #89B4FA;font-style: italic;"> field</span><span style="color: #9399B2;">(</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">    &amp;</span><span style="color: #F38BA8;">self</span><span style="color: #9399B2;">,</span></span>
+<span class="giallo-l"><span>    #</span><span style="color: #9399B2;">[</span><span style="color: #89B4FA;font-style: italic;">graphql</span><span style="color: #9399B2;">(</span><span>default</span><span style="color: #9399B2;">)]</span><span style="color: #EBA0AC;"> arg</span><span style="color: #94E2D5;">:</span><span style="color: #CBA6F7;"> i32</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  )</span><span style="color: #94E2D5;"> -&gt;</span><span style="color: #F9E2AF;font-style: italic;"> String</span><span style="color: #9399B2;"> {</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">    ...</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  }</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">}</span></span></code></pre><h4 class="is-4 subtitle">2. Easily create arrays with custom elements</h4>
+<p>Unfortunately <a rel="external" href="https://github.com/rust-lang/rust/pull/75644">https://github.com/rust-lang/rust/pull/75644</a> took one year to be reviewed but at least one subset was stabilized on version 1.63.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="rust"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;">// Snippet extracted from the Arbitrary project</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #CBA6F7;">fn</span><span style="color: #89B4FA;font-style: italic;"> size_hint</span><span style="color: #9399B2;">(</span><span style="color: #EBA0AC;">d</span><span style="color: #94E2D5;">:</span><span style="color: #CBA6F7;"> usize</span><span style="color: #9399B2;">)</span><span style="color: #94E2D5;"> -&gt;</span><span style="color: #9399B2;"> (</span><span style="color: #CBA6F7;">usize</span><span style="color: #9399B2;">,</span><span style="color: #F9E2AF;font-style: italic;"> Option</span><span style="color: #89DCEB;">&lt;</span><span style="color: #CBA6F7;">usize</span><span style="color: #89DCEB;">&gt;</span><span style="color: #9399B2;">) {</span></span>
+<span class="giallo-l"><span style="color: #CBA6F7;">  crate</span><span style="color: #94E2D5;">::</span><span style="color: #F9E2AF;">size_hint</span><span style="color: #94E2D5;">::</span><span style="color: #89B4FA;font-style: italic;">and_all</span><span style="color: #9399B2;">(</span><span style="color: #94E2D5;">&amp;</span><span style="color: #F9E2AF;">array</span><span style="color: #94E2D5;">::</span><span style="color: #89B4FA;font-style: italic;">from_fn</span><span style="color: #94E2D5;">::</span><span style="color: #89DCEB;">&lt;</span><span>_</span><span style="color: #9399B2;">,</span><span style="color: #F9E2AF;font-style: italic;"> N</span><span style="color: #9399B2;">,</span><span> _</span><span style="color: #89DCEB;">&gt;</span><span style="color: #9399B2;">(</span><span style="color: #94E2D5;">|</span><span>_</span><span style="color: #94E2D5;">|</span><span style="color: #9399B2;"> {</span></span>
+<span class="giallo-l"><span style="color: #89DCEB;">    &lt;</span><span style="color: #F9E2AF;font-style: italic;">T</span><span style="color: #CBA6F7;"> as</span><span style="color: #F9E2AF;font-style: italic;"> Arbitrary</span><span style="color: #89DCEB;">&gt;</span><span style="color: #94E2D5;">::</span><span style="color: #89B4FA;font-style: italic;">size_hint</span><span style="color: #9399B2;">(</span><span>d</span><span style="color: #9399B2;">)</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  }))</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">}</span></span></code></pre><h4 class="is-4 subtitle">3. Formally implement let chains</h4>
+<p>The toughest contribution, no doubt about that. <a rel="external" href="https://github.com/rust-lang/rust/pull/88642">https://github.com/rust-lang/rust/pull/88642</a> was very challenging both technically and mentally.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="rust"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;">// Snippet extracted from the Clippy project</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #CBA6F7;">if let</span><span style="color: #F9E2AF;font-style: italic;"> FormatArgsPiece</span><span style="color: #94E2D5;">::</span><span style="color: #89B4FA;font-style: italic;">Placeholder</span><span style="color: #9399B2;">(</span><span>placeholder</span><span style="color: #9399B2;">)</span><span style="color: #94E2D5;"> =</span><span> piece</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">  &amp;&amp;</span><span style="color: #CBA6F7;"> let</span><span style="color: #F9E2AF;font-style: italic;"> Ok</span><span style="color: #9399B2;">(</span><span>index</span><span style="color: #9399B2;">)</span><span style="color: #94E2D5;"> =</span><span> placeholder</span><span style="color: #94E2D5;">.</span><span>argument</span><span style="color: #94E2D5;">.</span><span>index</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">  &amp;&amp;</span><span style="color: #CBA6F7;"> let</span><span style="color: #F9E2AF;font-style: italic;"> Some</span><span style="color: #9399B2;">(</span><span>arg</span><span style="color: #9399B2;">)</span><span style="color: #94E2D5;"> =</span><span> format_args</span><span style="color: #94E2D5;">.</span><span>arguments</span><span style="color: #94E2D5;">.</span><span style="color: #89B4FA;font-style: italic;">all_args</span><span style="color: #9399B2;">()</span><span style="color: #94E2D5;">.</span><span style="color: #89B4FA;font-style: italic;">get</span><span style="color: #9399B2;">(</span><span>index</span><span style="color: #9399B2;">)</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">{</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">  ...</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">}</span></span></code></pre>
+<p>Hopefully the remaining concerns involving dropping order will be resolved in the near future to allow a possible stabilization.</p>
+<h4 class="is-4 subtitle">4. Macro meta-variable expressions</h4>
+<p><a rel="external" href="https://github.com/rust-lang/rust/issues/83527">https://github.com/rust-lang/rust/issues/83527</a> is really useful and allows operations that are currently impossible on stable. Despite my attempts, some questions were raised and they need to be addressed before stabilization.</p>
+<p>This particular feature made me wonder that it is generally easy to point out concerns, regardless if they are relevant, but it isn't generally easy to suggest options that will make things move forward. Worse yet, consensus requires work from the associated participants and available work is usually scarce among volunteers. In the grand scheme such a scenario creates, perhaps, ossification.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="rust"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;">// Snippet extracted from the Rust project</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #CBA6F7;">impl</span><span style="color: #89DCEB;">&lt;</span><span style="color: #94E2D5;">$</span><span style="color: #9399B2;">(</span><span style="color: #94E2D5;">$</span><span style="color: #F9E2AF;font-style: italic;">T</span><span style="color: #94E2D5;">:</span><span style="color: #F9E2AF;font-style: italic;"> PartialEq</span><span style="color: #9399B2;">),</span><span style="color: #94E2D5;">+</span><span style="color: #89DCEB;">&gt;</span><span style="color: #F9E2AF;font-style: italic;"> PartialEq</span><span style="color: #CBA6F7;"> for</span><span style="color: #9399B2;"> (</span><span style="color: #94E2D5;">$</span><span style="color: #9399B2;">(</span><span style="color: #94E2D5;">$</span><span style="color: #F9E2AF;font-style: italic;">T</span><span style="color: #9399B2;">,)</span><span style="color: #94E2D5;">+</span><span style="color: #9399B2;">)</span></span>
+<span class="giallo-l"><span style="color: #CBA6F7;">where</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">  last_type!</span><span style="color: #9399B2;">(</span><span style="color: #94E2D5;">$</span><span style="color: #9399B2;">(</span><span style="color: #94E2D5;">$</span><span style="color: #F9E2AF;font-style: italic;">T</span><span style="color: #9399B2;">,)</span><span style="color: #94E2D5;">+</span><span style="color: #9399B2;">)</span><span style="color: #94E2D5;">: ?</span><span style="color: #F9E2AF;font-style: italic;">Sized</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">{</span></span>
+<span class="giallo-l"><span style="color: #F9E2AF;font-style: italic;">  #</span><span style="color: #9399B2;">[</span><span style="color: #F9E2AF;font-style: italic;">inline</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span style="color: #CBA6F7;">  fn</span><span style="color: #89B4FA;font-style: italic;"> eq</span><span style="color: #9399B2;">(</span><span style="color: #94E2D5;">&amp;</span><span style="color: #F38BA8;">self</span><span style="color: #9399B2;">,</span><span style="color: #EBA0AC;"> other</span><span style="color: #94E2D5;">: &amp;</span><span style="color: #9399B2;">(</span><span style="color: #94E2D5;">$</span><span style="color: #9399B2;">(</span><span style="color: #94E2D5;">$</span><span style="color: #F9E2AF;font-style: italic;">T</span><span style="color: #9399B2;">,)</span><span style="color: #94E2D5;">+</span><span style="color: #9399B2;">))</span><span style="color: #94E2D5;"> -&gt;</span><span style="color: #F9E2AF;font-style: italic;"> bool</span><span style="color: #9399B2;"> {</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">    $</span><span style="color: #9399B2;">(</span><span style="color: #94E2D5;"> $</span><span style="color: #9399B2;">{</span><span style="color: #89B4FA;font-style: italic;">ignore</span><span style="color: #9399B2;">(</span><span style="color: #F9E2AF;font-style: italic;">T</span><span style="color: #9399B2;">)}</span><span style="color: #F38BA8;"> self</span><span style="color: #94E2D5;">.$</span><span style="color: #9399B2;">{</span><span style="color: #89B4FA;font-style: italic;">index</span><span style="color: #9399B2;">()}</span><span style="color: #94E2D5;"> ==</span><span> other</span><span style="color: #94E2D5;">.$</span><span style="color: #9399B2;">{</span><span style="color: #89B4FA;font-style: italic;">index</span><span style="color: #9399B2;">()} )</span><span style="color: #94E2D5;">&amp;&amp;+</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  }</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #94E2D5;">  ...</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">}</span></span></code></pre><h4 class="is-4 subtitle">5. Nicer assert messages</h4>
+<p><a rel="external" href="https://github.com/rust-lang/rust/issues/44838">https://github.com/rust-lang/rust/issues/44838</a> depends on work on the constant evaluation front which unfortunately is not my specialty.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="rust"><span class="giallo-l"><span style="color: #CBA6F7;">fn</span><span style="color: #89B4FA;font-style: italic;"> fun</span><span style="color: #9399B2;">(</span><span style="color: #EBA0AC;">a</span><span style="color: #94E2D5;">:</span><span style="color: #F9E2AF;font-style: italic;"> Option</span><span style="color: #89DCEB;">&lt;</span><span style="color: #CBA6F7;">i32</span><span style="color: #89DCEB;">&gt;</span><span style="color: #9399B2;">,</span><span style="color: #EBA0AC;"> b</span><span style="color: #94E2D5;">:</span><span style="color: #F9E2AF;font-style: italic;"> Option</span><span style="color: #89DCEB;">&lt;</span><span style="color: #CBA6F7;">i32</span><span style="color: #89DCEB;">&gt;</span><span style="color: #9399B2;">,</span><span style="color: #EBA0AC;"> c</span><span style="color: #94E2D5;">:</span><span style="color: #F9E2AF;font-style: italic;"> Option</span><span style="color: #89DCEB;">&lt;</span><span style="color: #CBA6F7;">i32</span><span style="color: #89DCEB;">&gt;</span><span style="color: #9399B2;">) {</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">  assert!</span><span style="color: #9399B2;">(</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    [</span><span style="color: #89B4FA;font-style: italic;">matches!</span><span style="color: #9399B2;">(</span><span>a</span><span style="color: #9399B2;">,</span><span style="color: #F9E2AF;font-style: italic;"> None</span><span style="color: #9399B2;">),</span><span style="color: #89B4FA;font-style: italic;"> matches!</span><span style="color: #9399B2;">(</span><span>b</span><span style="color: #9399B2;">,</span><span style="color: #F9E2AF;font-style: italic;"> Some</span><span style="color: #9399B2;">(</span><span style="color: #FAB387;">1</span><span style="color: #9399B2;">)]</span><span style="color: #94E2D5;"> ==</span><span style="color: #9399B2;"> [</span><span style="color: #F38BA8;">true</span><span style="color: #9399B2;">,</span><span style="color: #F38BA8;"> true</span><span style="color: #9399B2;">]</span><span style="color: #94E2D5;"> &amp;&amp;</span><span style="color: #89B4FA;font-style: italic;"> matches!</span><span style="color: #9399B2;">(</span><span>c</span><span style="color: #9399B2;">,</span><span style="color: #F9E2AF;font-style: italic;"> Some</span><span style="color: #9399B2;">(</span><span>x</span><span style="color: #9399B2;">)</span><span style="color: #CBA6F7;"> if</span><span> x</span><span style="color: #94E2D5;"> ==</span><span style="color: #FAB387;"> 2</span><span style="color: #9399B2;">)</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  );</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #CBA6F7;">fn</span><span style="color: #89B4FA;font-style: italic;"> main</span><span style="color: #9399B2;">() {</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">  fun</span><span style="color: #9399B2;">(</span><span style="color: #F9E2AF;font-style: italic;">Some</span><span style="color: #9399B2;">(</span><span style="color: #FAB387;">1</span><span style="color: #9399B2;">),</span><span style="color: #F9E2AF;font-style: italic;"> None</span><span style="color: #9399B2;">,</span><span style="color: #F9E2AF;font-style: italic;"> Some</span><span style="color: #9399B2;">(</span><span style="color: #FAB387;">2</span><span style="color: #9399B2;">));</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">// Assertion failed: [matches!(a, None), matches!(b, Some(1)] == [true, true] &amp;&amp; matches!(c, Some(x) if x == 2)</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">//</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">// With captures:</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">//   a = Some(1)</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">//   b = None</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">//   c = Some(2)</span></span></code></pre><h4 class="is-4 subtitle">6. cfg_select</h4>
+<p>Inspired by the <code>cfg_if</code> dependency, [https://github.com/rust-lang/rust/issues/115585] is so useful that it is surprising no one created it before. Same thing for a std <code>Either</code> enum but that is another topic.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="rust"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">cfg_select!</span><span style="color: #9399B2;"> {</span></span>
+<span class="giallo-l"><span>    unix</span><span style="color: #94E2D5;"> =&gt;</span><span style="color: #9399B2;"> {</span></span>
+<span class="giallo-l"><span style="color: #CBA6F7;">        fn</span><span style="color: #89B4FA;font-style: italic;"> foo</span><span style="color: #9399B2;">() {</span><span style="color: #9399B2;font-style: italic;"> /* unix specific functionality */</span><span style="color: #9399B2;"> }</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    }</span></span>
+<span class="giallo-l"><span>    target_pointer_width</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;32&quot;</span><span style="color: #94E2D5;"> =&gt;</span><span style="color: #9399B2;"> {</span></span>
+<span class="giallo-l"><span style="color: #CBA6F7;">        fn</span><span style="color: #89B4FA;font-style: italic;"> foo</span><span style="color: #9399B2;">() {</span><span style="color: #9399B2;font-style: italic;"> /* non-unix, 32-bit functionality */</span><span style="color: #9399B2;"> }</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    }</span></span>
+<span class="giallo-l"><span>    _</span><span style="color: #94E2D5;"> =&gt;</span><span style="color: #9399B2;"> {</span></span>
+<span class="giallo-l"><span style="color: #CBA6F7;">        fn</span><span style="color: #89B4FA;font-style: italic;"> foo</span><span style="color: #9399B2;">() {</span><span style="color: #9399B2;font-style: italic;"> /* fallback implementation */</span><span style="color: #9399B2;"> }</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    }</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">}</span></span></code></pre><h4 class="is-4 subtitle">7. macro_metavar_expr_concat</h4>
+<p>Similarly to <code>macro_metavar_expr</code>, [https://github.com/rust-lang/rust/issues/124225] also allows operations that are currently impossible on stable and it is much more powerful than the <code>concat_idents!</code> macro.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="rust"><span class="giallo-l"><span style="color: #CBA6F7;">macro_rules!</span><span style="color: #89B4FA;font-style: italic;"> many_idents</span><span style="color: #9399B2;"> {</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    (</span><span style="color: #F5C2E7;">$a</span><span style="color: #94E2D5;">:</span><span>ident</span><span style="color: #9399B2;">,</span><span style="color: #F5C2E7;"> $c</span><span style="color: #94E2D5;">:</span><span>ident</span><span style="color: #9399B2;">)</span><span style="color: #94E2D5;"> =&gt;</span><span style="color: #9399B2;"> {</span></span>
+<span class="giallo-l"><span style="color: #CBA6F7;">        const</span><span style="color: #94E2D5;"> $</span><span style="color: #9399B2;">{</span><span style="color: #89B4FA;font-style: italic;">concat</span><span style="color: #9399B2;">(</span><span style="color: #94E2D5;">$</span><span>a</span><span style="color: #9399B2;">,</span><span style="color: #F9E2AF;font-style: italic;"> B</span><span style="color: #9399B2;">,</span><span style="color: #94E2D5;"> $</span><span>c</span><span style="color: #9399B2;">,</span><span style="color: #F9E2AF;font-style: italic;"> D</span><span style="color: #9399B2;">)}</span><span style="color: #94E2D5;">:</span><span style="color: #CBA6F7;"> i32</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 1</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    };</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #CBA6F7;">fn</span><span style="color: #89B4FA;font-style: italic;"> main</span><span style="color: #9399B2;">() {</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">    many_idents!</span><span style="color: #9399B2;">(</span><span style="color: #F9E2AF;font-style: italic;">A</span><span style="color: #9399B2;">,</span><span style="color: #F9E2AF;font-style: italic;"> C</span><span style="color: #9399B2;">);</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">    assert_eq!</span><span style="color: #9399B2;">(</span><span style="color: #FAB387;">ABCD</span><span style="color: #9399B2;">,</span><span style="color: #FAB387;"> 1</span><span style="color: #9399B2;">);</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">}</span></span></code></pre><h4 class="is-4 subtitle">Final words</h4>
+<p>With this brief summary and other non-listed PRs, I think I made a small but positive impact on the ecosystem. Thank you very much to all the reviewers and mentors that helped me along the way with special mentions to <a rel="external" href="https://github.com/petrochenkov">petrochenkov</a>, <a rel="external" href="https://github.com/Centril">Centril</a> and <a rel="external" href="https://github.com/matthewjasper">matthewjasper</a>.</p>
+
+</div>
+
+
+            </main>
+
+            <footer>
+                <div class="columns is-vcentered">
+                    <div class="column is-8">
+                        Made with <a alt="Bulma" href="https://bulma.io/" target="_blank"><strong>Bulma</strong></a>
+                        and
+                        <a alt="Zola" href="https://www.getzola.org" target="_blank"><strong>Zola</strong></a>.
+                    </div>
+                    <div class="column">
+                        <div>
+                            <a href="https://github.com/c410-f3r" target="_blank" title="GitHub account">
+                                <span class="icon-text">
+                                    <span class="icon">
+                                        <img alt="Github" src="/fontawesome/github.svg">
+                                    </span>
+                                    <span>c410-f3r</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://c410-f3r.github.io/index.js"></script>
+</body>
+
+</html>
