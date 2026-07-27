@@ -2,6 +2,22 @@
 
 {% block content %}
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ page.title }}",
+  "image": [
+    "{% if page.extra.image %}{{ get_url(path=page.extra.image) }}{% endif %}"
+   ],
+  "datePublished": "{{ page.date }}",
+  "author": [{
+    "@type": "Person",
+    "name": "{{ config.extra.author | default(value='Caio') }}"
+  }]
+}
+</script>
+
 <h4 class="has-text-centered is-4 ribbon title">{{ page.title }}</h4>
 
 <div class="content">

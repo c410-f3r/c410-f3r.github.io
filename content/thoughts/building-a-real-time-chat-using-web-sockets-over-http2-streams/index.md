@@ -7,7 +7,7 @@ title = "Building a real-time chat using WebSockets over HTTP/2 streams"
 tags = ["web", "websocket", "http", "rust", "svelte", "deno", "wtx"]
 
 [extra]
-image = "/thoughts/building-a-real-time-chat-using-web-sockets-over-http2-streams/intro.jpg"
+image = "/thoughts/building-a-real-time-chat-using-web-sockets-over-http2-streams/intro.avif"
 +++
 
 <figure class="image is-16by9">
@@ -69,14 +69,14 @@ We will be making extensive use of manual `Futures` and related structures to sy
 There are two phases. In the handshake phase `Client 1` connects to the server and awaits for someone to show-up. Once `Client 2` connects, the server matches both parties and then signals `Client 1` to awake from its idle state. A new chat has been established.
 
 <figure class="image">
-  <img src="/thoughts/building-a-real-time-chat-using-web-sockets-over-http2-streams/handshake.jpg" alt="Handshake">
+  <img src="/thoughts/building-a-real-time-chat-using-web-sockets-over-http2-streams/handshake.avif" alt="Handshake" loading="lazy">
   <figcaption>High-level handshake procedure</figcaption>
 </figure>
 
 In the connection phase there are two tasks racing for completion for each client, one receives local messages and the other receives remote messages. When the disconnect button is activated by any user both sessions are dropped.
 
 <figure class="image">
-  <img src="/thoughts/building-a-real-time-chat-using-web-sockets-over-http2-streams/connection.jpg" alt="Connection">
+  <img src="/thoughts/building-a-real-time-chat-using-web-sockets-over-http2-streams/connection.avif" alt="Connection" loading="lazy">
   <figcaption>High-level connection procedure</figcaption>
 </figure>
 
@@ -459,7 +459,7 @@ It is time to visualize the final application. Type `cargo run` in the backend f
 ## Final words
 
 <figure class="image">
-  <img src="/thoughts/building-a-real-time-chat-using-web-sockets-over-http2-streams/example.png" alt="Handshake">
+  <img src="/thoughts/building-a-real-time-chat-using-web-sockets-over-http2-streams/example.avif" alt="Handshake" loading="lazy">
 </figure>
 
 While we have built a chat application, WebSocket over HTTP/2 streams is useful for many other scenarios when users are interacting with web browsers. For example, live stock prices, team document editing or video streaming.

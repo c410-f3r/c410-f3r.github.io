@@ -7,11 +7,11 @@ title = "The fastest WebSocket implementation"
 tags = ["rust", "websocket", "benchmark", "wtx"]
 
 [extra]
-image = "/thoughts/the-fastest-websocket-implementation/intro.jpg"
+image = "/thoughts/the-fastest-websocket-implementation/intro.avif"
 +++
 
 <figure class="image">
-  <img src="/thoughts/the-fastest-websocket-implementation/intro.jpg" alt="Introduction">
+  <img src="/thoughts/the-fastest-websocket-implementation/intro.avif" alt="Introduction" loading="lazy">
   <figcaption>Adapted photo of William Warby on Unsplash.</figcaption>
 </figure>
 
@@ -64,23 +64,23 @@ The benchmark procedure is quite simple: servers listen to incoming requests on 
 
 |Chart|Connections|Messages|Memory|fastwebsockets|gorilla/websockets|tokio_tungstenite|uWebsockets|websockets|wtx_hyper|wtx-_raw_async_std|wtx_raw_tokio|
 |---|---|---|---|---|---|---|---|---|---|---|---|
-|<a href="/thoughts/the-fastest-websocket-implementation/low-mid-high.png">Chart</a>|<font color="#7facde">low</font>|<font color="#a6de95">mid</font>|<font color="#e7af4f">high</font>|104|273|102|88|232|64❗|67|65|
-|<a href="/thoughts/the-fastest-websocket-implementation/low-high-low.png">Chart</a>|<font color="#7facde">low</font>|<font color="#e7af4f">high</font>|<font color="#7facde">low</font>|5759|5783|5784|5760|5728❗|5802|5764|5736|
-|<a href="/thoughts/the-fastest-websocket-implementation/low-high-mid.png">Chart</a>|<font color="#7facde">low</font>|<font color="#e7af4f">high</font>|<font color="#a6de95">mid</font>|336|546|235|192|526|160|163|159❗|
-|<a href="/thoughts/the-fastest-websocket-implementation/low-high-high.png">Chart</a>|<font color="#7facde">low</font>|<font color="#e7af4f">high</font>|<font color="#e7af4f">high</font>|331|960|360|325|725|250|282|249❗|
-|<a href="/thoughts/the-fastest-websocket-implementation/mid-low-high.png">Chart</a>|<font color="#a6de95">mid</font>|<font color="#7facde">low</font>|<font color="#e7af4f">high</font>|18|22|18|15|31|14|12❗|13|
-|<a href="/thoughts/the-fastest-websocket-implementation/mid-mid-high.png">Chart</a>|<font color="#a6de95">mid</font>|<font color="#a6de95">mid</font>|<font color="#e7af4f">high</font>|4503|5724|3959|4816|9754|3514|3474❗|3498|
-|<a href="/thoughts/the-fastest-websocket-implementation/mid-high-low.png">Chart</a>|<font color="#a6de95">mid</font>|<font color="#e7af4f">high</font>|<font color="#7facde">low</font>|5684❗|5800|5721|5687|6681|5689|5764|5684❗|
-|<a href="/thoughts/the-fastest-websocket-implementation/mid-high-mid.png">Chart</a>|<font color="#a6de95">mid</font>|<font color="#e7af4f">high</font>|<font color="#a6de95">mid</font>|11020|13735|8365|9072|19874|6937|6895❗|6933|
-|<a href="/thoughts/the-fastest-websocket-implementation/mid-high-high.png">Chart</a>|<font color="#a6de95">mid</font>|<font color="#e7af4f">high</font>|<font color="#e7af4f">high</font>|19808|23178|15471|19821|38327|13759|13693❗|13749|
-|<a href="/thoughts/the-fastest-websocket-implementation/high-low-low.png">Chart</a>|<font color="#e7af4f">high</font>|<font color="#7facde">low</font>|<font color="#7facde">low</font>|52|71|98|46|1053|52|41❗|88|
-|<a href="/thoughts/the-fastest-websocket-implementation/high-low-mid.png">Chart</a>|<font color="#e7af4f">high</font>|<font color="#7facde">low</font>|<font color="#a6de95">mid</font>|84|86|74|51|1043|60|50|48❗|
-|<a href="/thoughts/the-fastest-websocket-implementation/high-low-high.png">Chart</a>|<font color="#e7af4f">high</font>|<font color="#7facde">low</font>|<font color="#e7af4f">high</font>|124|82|78|57|1059|55|54❗|58|
-|<a href="/thoughts/the-fastest-websocket-implementation/high-mid-low.png">Chart</a>|<font color="#e7af4f">high</font>|<font color="#a6de95">mid</font>|<font color="#7facde">low</font>|2987|3051|3027|2955|5071|2981|3000|2942❗|
-|<a href="/thoughts/the-fastest-websocket-implementation/high-mid-mid.png">Chart</a>|<font color="#e7af4f">high</font>|<font color="#a6de95">mid</font>|<font color="#a6de95">mid</font>|20150|21475|14593|18931|41368|11172|10987❗|11268|
-|<a href="/thoughts/the-fastest-websocket-implementation/high-mid-high.png">Chart</a>|<font color="#e7af4f">high</font>|<font color="#a6de95">mid</font>|<font color="#e7af4f">high</font>|41846|43514|20706|21779|41091|16118|15555|15524❗|
-|<a href="/thoughts/the-fastest-websocket-implementation/high-high-low.png">Chart</a>|<font color="#e7af4f">high</font>|<font color="#e7af4f">high</font>|<font color="#7facde">low</font>|5828|5941|5830|5790|9400|5778❗|5877|5808|
-|<a href="/thoughts/the-fastest-websocket-implementation/high-high-mid.png">Chart</a>|<font color="#e7af4f">high</font>|<font color="#e7af4f">high</font>|<font color="#a6de95">mid</font>|53756|55063|44829|47312|107758|36628|34333❗|37000|
+|<a href="/thoughts/the-fastest-websocket-implementation/low-mid-high.avif">Chart</a>|<font color="#7facde">low</font>|<font color="#a6de95">mid</font>|<font color="#e7af4f">high</font>|104|273|102|88|232|64❗|67|65|
+|<a href="/thoughts/the-fastest-websocket-implementation/low-high-low.avif">Chart</a>|<font color="#7facde">low</font>|<font color="#e7af4f">high</font>|<font color="#7facde">low</font>|5759|5783|5784|5760|5728❗|5802|5764|5736|
+|<a href="/thoughts/the-fastest-websocket-implementation/low-high-mid.avif">Chart</a>|<font color="#7facde">low</font>|<font color="#e7af4f">high</font>|<font color="#a6de95">mid</font>|336|546|235|192|526|160|163|159❗|
+|<a href="/thoughts/the-fastest-websocket-implementation/low-high-high.avif">Chart</a>|<font color="#7facde">low</font>|<font color="#e7af4f">high</font>|<font color="#e7af4f">high</font>|331|960|360|325|725|250|282|249❗|
+|<a href="/thoughts/the-fastest-websocket-implementation/mid-low-high.avif">Chart</a>|<font color="#a6de95">mid</font>|<font color="#7facde">low</font>|<font color="#e7af4f">high</font>|18|22|18|15|31|14|12❗|13|
+|<a href="/thoughts/the-fastest-websocket-implementation/mid-mid-high.avif">Chart</a>|<font color="#a6de95">mid</font>|<font color="#a6de95">mid</font>|<font color="#e7af4f">high</font>|4503|5724|3959|4816|9754|3514|3474❗|3498|
+|<a href="/thoughts/the-fastest-websocket-implementation/mid-high-low.avif">Chart</a>|<font color="#a6de95">mid</font>|<font color="#e7af4f">high</font>|<font color="#7facde">low</font>|5684❗|5800|5721|5687|6681|5689|5764|5684❗|
+|<a href="/thoughts/the-fastest-websocket-implementation/mid-high-mid.avif">Chart</a>|<font color="#a6de95">mid</font>|<font color="#e7af4f">high</font>|<font color="#a6de95">mid</font>|11020|13735|8365|9072|19874|6937|6895❗|6933|
+|<a href="/thoughts/the-fastest-websocket-implementation/mid-high-high.avif">Chart</a>|<font color="#a6de95">mid</font>|<font color="#e7af4f">high</font>|<font color="#e7af4f">high</font>|19808|23178|15471|19821|38327|13759|13693❗|13749|
+|<a href="/thoughts/the-fastest-websocket-implementation/high-low-low.avif">Chart</a>|<font color="#e7af4f">high</font>|<font color="#7facde">low</font>|<font color="#7facde">low</font>|52|71|98|46|1053|52|41❗|88|
+|<a href="/thoughts/the-fastest-websocket-implementation/high-low-mid.avif">Chart</a>|<font color="#e7af4f">high</font>|<font color="#7facde">low</font>|<font color="#a6de95">mid</font>|84|86|74|51|1043|60|50|48❗|
+|<a href="/thoughts/the-fastest-websocket-implementation/high-low-high.avif">Chart</a>|<font color="#e7af4f">high</font>|<font color="#7facde">low</font>|<font color="#e7af4f">high</font>|124|82|78|57|1059|55|54❗|58|
+|<a href="/thoughts/the-fastest-websocket-implementation/high-mid-low.avif">Chart</a>|<font color="#e7af4f">high</font>|<font color="#a6de95">mid</font>|<font color="#7facde">low</font>|2987|3051|3027|2955|5071|2981|3000|2942❗|
+|<a href="/thoughts/the-fastest-websocket-implementation/high-mid-mid.avif">Chart</a>|<font color="#e7af4f">high</font>|<font color="#a6de95">mid</font>|<font color="#a6de95">mid</font>|20150|21475|14593|18931|41368|11172|10987❗|11268|
+|<a href="/thoughts/the-fastest-websocket-implementation/high-mid-high.avif">Chart</a>|<font color="#e7af4f">high</font>|<font color="#a6de95">mid</font>|<font color="#e7af4f">high</font>|41846|43514|20706|21779|41091|16118|15555|15524❗|
+|<a href="/thoughts/the-fastest-websocket-implementation/high-high-low.avif">Chart</a>|<font color="#e7af4f">high</font>|<font color="#e7af4f">high</font>|<font color="#7facde">low</font>|5828|5941|5830|5790|9400|5778❗|5877|5808|
+|<a href="/thoughts/the-fastest-websocket-implementation/high-high-mid.avif">Chart</a>|<font color="#e7af4f">high</font>|<font color="#e7af4f">high</font>|<font color="#a6de95">mid</font>|53756|55063|44829|47312|107758|36628|34333❗|37000|
 
 </div>
 
@@ -91,7 +91,7 @@ Tested with a notebook composed by i5-1135G7, 256GB SSD and 32GB RAM. Combinatio
 ## Result
 
 <figure class="image">
-  <img src="/thoughts/the-fastest-websocket-implementation/mid-mid-high.png" alt="Introduction">
+  <img src="/thoughts/the-fastest-websocket-implementation/mid-mid-high.avif" alt="Introduction" loading="lazy">
 </figure>
 
 `wtx` as a whole scored an average amount of 6350.31 ms, followed by `tokio-tungstenite` with 7602.94 ms, `uWebSockets` with 8393.94 ms, `fastwebsockets` with 10140.58 ms, `gorilla/websockets` with 10900.23 ms and finally `websockets` with 17042.41 ms.

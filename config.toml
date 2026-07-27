@@ -1,6 +1,7 @@
 base_url = "https://c410-f3r.github.io/"
 build_search_index = true
 compile_sass = true
+description = "A blog about Rust, embedded systems, web technologies and open-source"
 default_language = "en"
 taxonomies = [
     { name = "tags"}

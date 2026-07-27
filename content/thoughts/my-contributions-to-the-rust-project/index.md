@@ -7,17 +7,17 @@ title = "My contributions to the Rust project"
 tags = ["rust", "compiler", "open-source"]
 
 [extra]
-image = "/thoughts/my-contributions-to-the-rust-project/intro.jpg"
+image = "/thoughts/my-contributions-to-the-rust-project/intro.avif"
 +++
 
 <figure class="image">
-  <img src="/thoughts/my-contributions-to-the-rust-project/intro.jpg" alt="Introduction">
+  <img src="/thoughts/my-contributions-to-the-rust-project/intro.avif" alt="Introduction" loading="lazy">
   <figcaption>Photo by Roman Synkevych on Unsplash</figcaption>
 </figure>
 
 All started with [https://github.com/rust-lang/rust/issues/60406#issuecomment-488306461] around ~4 years ago and since then I didn't stop contributing to the Rust compiler as well as other related projects like Clippy in my free time.
 
-Besides the technical skills learned, the things that stood out the most were the concentration of knowledge in the hands of few busy individuals that eventually parted away and a noticeable amount of good contributors passing through sensible financial problems but these are matters for another post.
+Besides the technical skills learned, the things that stood out the most were the concentration of knowledge in the hands of few busy individuals that eventually parted away and a noticeable amount of good contributors passing through sensible financial problems.
 
 Without further ado, let's list all my major contributions in chronological order.
 

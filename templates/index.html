@@ -8,27 +8,44 @@
 
 <head>
     <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <script type="text/javascript" src="{{ get_url(path="index.js", trailing_slash=false) }}"></script>
     <link href="{{ get_url(path="index.css", trailing_slash=false) }}" rel="stylesheet">
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ config.title }}</title>
+
+    {% set desc = config.description %}
+    {% if page.description %}
+        {% set desc = page.description %}
+    {% elif section.description %}
+        {% set desc = section.description %}
+    {% endif %}
+    <meta name="description" content="{{ desc }}">
+
+    {% if current_url %}
+        <link rel="canonical" href="{{ current_url | safe }}">
+    {% endif %}
+
+    <meta property="og:type" content="{% if page %}article{% else %}website{% endif %}">
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ config.title }}{% endif %}">
+    <meta property="og:description" content="{{ desc }}">
+    {% if current_url %}<meta property="og:url" content="{{ current_url | safe }}">{% endif %}
+    
+    {% if page.extra.image %}
+        <meta property="og:image" content="{{ get_url(path=page.extra.image) }}">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:image" content="{{ get_url(path=page.extra.image) }}">
+    {% endif %}
+    
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ config.title }}{% endif %}">
+    <meta name="twitter:description" content="{{ desc }}">
+
+    <title>{% if page.title %}{{ config.title }} - {{ page.title }}{% elif section.title %}{{ config.title }} - {{ section.title }}{% else %}{{ config.title }}{% endif %}</title>
 </head>
 
 <body>
@@ -53,7 +70,7 @@
                             <a class="navbar-item px-4 underline" href="{{ item.url }}" title="{{ item.name }}">
                                 <span class="icon">
                                     <figure class="image is-16x16">
-                                        <img alt="{{ item.name }}" class="image is-16x16" src="{{ item.icon }}">
+                                        <img alt="{{ item.name }}" class="image is-16x16" src="{{ item.icon }}" loading="lazy">
                                     </figure>
                                 </span>
                                 <span>{{ item.name }}</span>
@@ -72,7 +89,7 @@
                 <article class="columns post-preview">
                     <figure class="column is-3">
                         <p class="image">
-                            <img alt="{{ page.title }}" src="{{ page.extra.image }}">
+                            <img alt="{{ page.title }}" src="{{ page.extra.image }}" loading="lazy">
                         </p>
                     </figure>
 
@@ -97,7 +114,7 @@
                             <a href="https://github.com/c410-f3r" target="_blank" title="GitHub account">
                                 <span class="icon-text">
                                     <span class="icon">
-                                        <img alt="Github" src="/fontawesome/github.svg">
+                                        <img alt="Github" src="/fontawesome/github.svg" loading="lazy">
                                     </span>
                                     <span>c410-f3r</span>
                                 </span>

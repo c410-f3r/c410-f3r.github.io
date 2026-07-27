@@ -7,11 +7,11 @@ title = "Securely sending DHT22 sensor data from an ESP32 board to PostgreSQL"
 tags = ["iot", "rust", "wtx", "esp32", "postgresql", "pgsql", "tls", "ssl", "sensor", "dht22"]
 
 [extra]
-image = "/thoughts/securely-sending-dht22-sensor-data-from-an-esp32-board-to-postgresql/intro.jpg"
+image = "/thoughts/securely-sending-dht22-sensor-data-from-an-esp32-board-to-postgresql/intro.avif"
 +++
 
 <figure class="image">
-  <img src="/thoughts/securely-sending-dht22-sensor-data-from-an-esp32-board-to-postgresql/intro.jpg" alt="Introduction">
+  <img src="/thoughts/securely-sending-dht22-sensor-data-from-an-esp32-board-to-postgresql/intro.avif" alt="Introduction" loading="lazy">
 </figure>
 
 Let's collect data provided by a DHT22 sensor and store it asynchronously in a [PostgreSQL] database via WiFi using an encrypted connection. We will start with a brief introduction about the principal technologies, proceed to setting-up the necessary environment and then code our project.
@@ -71,7 +71,7 @@ It wasn't so difficult for ESP32 but there are a bunch of things that need to be
 The following image illustrates all necessary connections powered by a 3.3V line.
 
 <figure class="image">
-  <img src="/thoughts/securely-sending-dht22-sensor-data-from-an-esp32-board-to-postgresql/schematic.webp" alt="Schematic">
+  <img src="/thoughts/securely-sending-dht22-sensor-data-from-an-esp32-board-to-postgresql/schematic.avif" alt="Schematic" loading="lazy">
   <figcaption>Photo retrieved from https://capsistema.com.br</figcaption>
 </figure>
 
@@ -373,7 +373,7 @@ The DHT22 sensor sends the `humidity` and `temperature` values to the ESP32 boar
 It is recommended that you follow this section with the code available in the repository (<https://github.com/c410-f3r/blog-posts>).
 
 <figure class="image">
-  <img src="/thoughts/securely-sending-dht22-sensor-data-from-an-esp32-board-to-postgresql/flow.jpg" alt="Flow">
+  <img src="/thoughts/securely-sending-dht22-sensor-data-from-an-esp32-board-to-postgresql/flow.avif" alt="Flow" loading="lazy">
 </figure>
 
 Personally I am not proud but `unwrap()` was shamelessly used to accelerate development. However, you can create your own `Error` enum to centralize all the other third-party error types.
@@ -656,7 +656,7 @@ cargo run --release
 ## Final words
 
 <figure class="image">
-  <img src="/thoughts/securely-sending-dht22-sensor-data-from-an-esp32-board-to-postgresql/esp32.jpg" alt="ESP32">
+  <img src="/thoughts/securely-sending-dht22-sensor-data-from-an-esp32-board-to-postgresql/esp32.avif" alt="ESP32" loading="lazy">
 </figure>
 
 That is it! You just established a remote [PostgreSQL] connection via WiFi using `SCRAM-SHA-256` without channel binding over a TLS 1.3 session encrypted with the `Aes128GcmSha256` cipher schema.

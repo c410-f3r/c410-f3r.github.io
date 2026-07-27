@@ -1,6 +1,6 @@
 +++
 date = 2026-06-12
-description = "Evaluates the combination of three key agreements, five signing algorithms and three cipher suites."
+description = "Evaluates the combination of three key agreements, five signing algorithms and three cipher suites in different crypto projects."
 title = "TLS Handshakes: Measuring the Performance of 4 Cryptography Libraries"
 
 [taxonomies]
@@ -11,7 +11,7 @@ image = "/thoughts/tls-handshakes-measuring-the-performance-of-4-cryptography-li
 +++
 
 <figure class="image">
-  <img src="/thoughts/tls-handshakes-measuring-the-performance-of-4-cryptography-libraries/intro.avif" alt="Introduction">
+  <img src="/thoughts/tls-handshakes-measuring-the-performance-of-4-cryptography-libraries/intro.avif" alt="Introduction" loading="lazy">
   <figcaption>Photo by FlyD on Unsplash</a></figcaption>
 </figure>
 
@@ -45,7 +45,7 @@ After all 36 (4 x 3 x 3) builds are finished, each one of them are sequentially 
 Execution time in seconds. Lower is better.
 
 <figure class="image">
-  <img src="/thoughts/tls-handshakes-measuring-the-performance-of-4-cryptography-libraries/aes128gcmsha256.svg" alt="Aes128GcmSha256">
+  <img src="/thoughts/tls-handshakes-measuring-the-performance-of-4-cryptography-libraries/aes128gcmsha256.svg" alt="Aes128GcmSha256" loading="lazy">
 </figure>
 
 ## Aes256GcmSha384
@@ -53,7 +53,7 @@ Execution time in seconds. Lower is better.
 Execution time in seconds. Lower is better.
 
 <figure class="image">
-  <img src="/thoughts/tls-handshakes-measuring-the-performance-of-4-cryptography-libraries/aes256gcmsha384.svg" alt="Aes256GcmSha384">
+  <img src="/thoughts/tls-handshakes-measuring-the-performance-of-4-cryptography-libraries/aes256gcmsha384.svg" alt="Aes256GcmSha384" loading="lazy">
 </figure>
 
 ## Chacha20Poly1305Sha256
@@ -61,7 +61,7 @@ Execution time in seconds. Lower is better.
 Execution time in seconds. Lower is better.
 
 <figure class="image">
-  <img src="/thoughts/tls-handshakes-measuring-the-performance-of-4-cryptography-libraries/chacha20poly1305sha256.svg" alt="Chacha20Poly1305Sha256">
+  <img src="/thoughts/tls-handshakes-measuring-the-performance-of-4-cryptography-libraries/chacha20poly1305sha256.svg" alt="Chacha20Poly1305Sha256" loading="lazy">
 </figure>
 
 ## Findings
